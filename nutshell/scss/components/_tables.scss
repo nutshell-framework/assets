@@ -1,0 +1,62 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/TABLES
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --table-border-width:      1px;
+  --table-border-style:      solid;
+  --table-border-color:      #ccc;
+  --table-background-light:  #eee;
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+table,
+%table {
+    margin-bottom: var(--base-spacing-unit);
+    
+    width: 100%;
+    padding: 0;
+    border-spacing: 0;
+    border-left: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+    border-top: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+
+    th,
+    td {
+      border-right: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+      border-bottom: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+
+      padding: 10px;
+    }
+}
+
+thead {
+  text-align: left;
+  background: var(--table-background-light);
+}
+
+tfoot {
+  font-style: italic;
+}
+
+.table--striped {
+  .even {
+    background: var(--table-background-light);
+  }
+}
+
+.table--overflow {
+  overflow-x: scroll;
+  -ms-overflow-x: auto;
+}

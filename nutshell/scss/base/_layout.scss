@@ -1,0 +1,66 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// BASE/LAYOUT
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --header-color-background:   var(--color-page-background);
+  --header-color-text:         var(--color-text);
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// #header
+[id="header"] {
+  background: var(--header-color-background);
+  color: var(--header-color-text);
+    
+  > .inside {
+    @include wrapper-max;
+    @include padding-default;
+  }
+}
+
+
+// #container
+[id="container"] {
+
+}
+
+
+// #main
+// [1] make sure object-fit-images always show up 
+.mod_article {
+  @include wrapper-max;
+  @include padding-default;
+  padding-top: var(--base-spacing-unit--lg);
+  padding-bottom: var(--base-spacing-unit--lg);
+  
+  position: relative; // [1]
+}
+
+.article--full {
+  @include wrapper-max(none);
+  
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+// #footer
+[id="footer"] {
+  > .inside {
+    @include wrapper-max;
+    @include padding-default;
+  }
+}

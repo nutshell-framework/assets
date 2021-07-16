@@ -1,0 +1,252 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE
+// *
+
+//
+// BASE/TYPE
+// --------------------------------------------------
+
+// SASS-VARIABLES
+$headlines: (
+  h1: (
+    sizes: (
+      xs: 2.0rem,
+      sm: 2.0rem,
+      md: 2.25rem,
+      lg: 2.25rem,
+      xl: 2.25rem
+    ),
+    line-height: 1.55,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h2: (
+    sizes: (
+      xs: 1.625rem,
+      sm: 1.625rem,
+      md: 1.750rem,
+      lg: 1.750rem,
+      xl: 1.750rem
+    ),
+    line-height: 1.5,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h3: (
+    sizes: (
+      xs: 1.375rem,
+      sm: 1.375rem,
+      md: 1.500rem,
+      lg: 1.500rem,
+      xl: 1.500rem
+    ),
+    line-height: 1.25,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h4: (
+    sizes: (
+      xs: 1.125rem,
+      sm: 1.125rem,
+      md: 1.250rem,
+      lg: 1.250rem,
+      xl: 1.250rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+  h5: (
+    sizes: (
+      xs: 1rem,
+      sm: 1rem,
+      md: 1rem,
+      lg: 1rem,
+      xl: 1rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+  h6: (
+    sizes: (
+      xs: 0.875rem,
+      sm: 0.875rem,
+      md: 0.875rem,
+      lg: 0.875rem,
+      xl: 0.875rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+) !default;
+
+// CSS-VARIABLES
+html {
+  --headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  --headings__font-weight: 700;
+  --headings__color: 'currentColor';
+
+  --paragraph__link-color: var(--color-links);
+  --code__color: var(--color-highlight);
+  --selection-background: var(--color-brand);
+  --pre__color-background: var(--color-gray);
+  --pre__color: var(--color-text--inverted);
+
+  --selection-color: var(--color-text--inverted);
+
+  --hr-border: var(--base-border);
+  --paragraph__link-decoration: underline;
+  --paragraph__link-decoration--hover: none;
+}
+
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+
+// Headings 1–6.
+#{headings()} { // [1]
+  font-weight: var(--headings__font-weight);
+  font-family: var(--headings__font-family);
+  color: var(--headings__color);
+}
+
+// H1 — h6: Generate Element Styles from config
+// [1] more space between last text-element and new headline
+// [2] combined headlines - example: h1 + h2
+// [3] correct margin-top for headlines, when in a new content element
+// [4] ex: h1 + h2
+// [5] base font size
+// [6] loop through all viewports and add font-size for every viewport
+
+@each $element,$options in $headlines {
+  $count: index(map-keys($headlines), $element);
+
+  %#{$element},
+  %_#{$element} {
+    $sizes: map-get($options, sizes);
+    $line-height: map-get($options, line-height);
+    $margin-top: map-get($options, margin-top);
+    $margin-bottom: map-get($options, margin-bottom);
+    $color: map-get($options, color);
+    $font-weight: map-get($options, font-weight);
+    $font-family: map-get($options, font-family);
+    font-size: map-get($sizes, xs); // [5]
+    line-height: $line-height;
+    margin-bottom: $margin-bottom;
+
+    @if $color {
+      color: $color;
+    }
+
+    @if $font-weight {
+      font-weight: $font-weight;
+    } @else {
+      font-weight: var(--headings__font-weight);
+    }
+
+    @if $font-family {
+      font-family: $font-family;
+    } @else {
+      font-family: var(--headings__font-family);
+    }
+
+    // [6]
+    @for $i from 2 through length($sizes) {
+      $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
+      $viewport: nth($current, 1);
+      $font-size: nth($current, 2);
+
+      @include media-query(screen-#{$viewport}) {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  #{$element} {
+    @extend %_#{$element};
+
+    $sizes: map-get($options, sizes);
+    $line-height: map-get($options, line-height);
+    $margin-top: map-get($options, margin-top);
+    $margin-bottom: map-get($options, margin-bottom);
+
+    p + &,  // [1]
+    ul + &,
+    ol + & {
+      margin-top: $margin-top;
+    }
+
+    .ce_text + .ce_text & {
+      &:first-child {
+        margin-top: $margin-top;
+      }
+    }
+
+    @if $count < 6 {
+      & + h#{$count + 1} { // [4]
+        margin-top: -1 * $margin-bottom;
+      }
+    }
+  }
+}
+
+// Paragraph, Lists
+p,
+ul,
+ol {
+  margin-top: 0;
+
+  a {
+    text-decoration: var(--paragraph__link-decoration);
+
+    &:hover {
+      --paragraph__link-decoration: var(--paragraph__link-decoration--hover);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Code
+code {
+  color: var(--code__color);
+}
+
+pre {
+  padding: 1rem;
+  background: var(--pre__color-background);
+  color: var(--pre__color);
+  overflow-x: scroll;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: var(--hr-border);
+}
+
+// list-item with more than one line of text should have additional space to the following list-item
+.li--block {
+  margin-bottom: 1rem;
+}
+
+.ce_text {
+  margin-bottom: var(--base-spacing-unit);
+}
+
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-color);
+  opacity: 1;
+}

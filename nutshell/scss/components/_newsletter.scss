@@ -1,0 +1,94 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/NEWSLETTER
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --newsletter-list-border:    var(--base-border);
+  --newsletter-reader-width:   600px;
+  --newsletter-reader-border:  var(--base-border);
+}
+
+// USED FROM _variables.scss
+// $base-spacing-unit--sm
+
+// --------------------------------------------------
+
+// [1] let the text-input grow until submit-button hits the maximum width
+// [2] reset margin-bottom, otherwise the button will grow on text-input height+margin
+// [3] makes error 100% width, instead of standing left to the text-input
+.newsletter-subscribe,
+.newsletter-unsubscribe {
+  margin-bottom: var(--base-spacing-unit);
+
+  .formbody {
+    display: flex; // [1]
+    flex-flow: row wrap; // [1]
+  }
+  
+  .text,
+  .widget-text {
+    margin-bottom: 0; // [2]
+    
+    display: inline-block;
+    flex: 1;
+  }
+  
+  .error {
+    margin-bottom: 0;
+    
+    flex: 1 100%; // [3]
+    font-weight: 700;
+  }
+  
+  .submit {
+    margin-left: var(--base-spacing-unit--xs);
+  }
+}
+
+.newsletter-list {
+  @include navigation;
+  
+  li {
+    border-bottom: var(--newsletter-list-border);   
+    padding-top: var(--base-spacing-unit);
+    padding-bottom: var(--base-spacing-unit);
+    display: block;
+    
+    &:first-of-type {
+      border-top: var(--newsletter-list-border);
+    }
+    
+    @include media-query(screen-sm) {
+      font-size: var(--heading-4__size);
+      line-height: var(--heading-4__line-height);
+    }
+    
+    @include media-query(screen-md) {
+      font-size: var(--heading-3__size);
+      line-height: var(--heading-3__line-height);
+    }
+    
+    a {    
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.newsletter-reader {
+  max-width: var(--newsletter-reader-width);
+  margin-left: auto;
+  margin-right: auto;
+  border: var(--newsletter-reader-border);
+  padding: 0 var(--base-spacing-unit);
+}

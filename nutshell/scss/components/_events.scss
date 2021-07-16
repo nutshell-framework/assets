@@ -1,0 +1,96 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/EVENTS
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --event-border:  var(--base-border);
+}
+
+// USED FROM _variables.scss
+// var(--base-spacing-unit);
+// var(--base-spacing-unit--sm);
+// var(--headings__font-weight);
+// var(--headings__font-family);
+// var(--heading__size-4);
+// var(--heading__l-h--4);
+// var(--heading__m-t--4);
+// var(--heading__m-b--4);
+
+// --------------------------------------------------
+
+// event list
+// [1] call every headline element (h1-h6)
+// [2] headline for FE-Module
+.events-list {
+  margin-bottom: var(--base-spacing-unit);
+  
+  > { 
+    #{headings()} { // [1]
+      margin-bottom: 0;
+    }
+  }
+  
+  .image_container {
+    margin-top: var(--base-spacing-unit);
+    margin-bottom: var(--base-spacing-unit);
+  }
+    
+  .float_left {
+    margin-right: var(--base-spacing-unit);
+  }
+  
+  .float_right {
+    margin-left: var(--base-spacing-unit);
+  } 
+  
+  .event {
+    
+    > { 
+      #{headings()} { // [1] 
+        margin-top: var(--base-spacing-unit);
+      }
+    }
+  }
+  
+  .layout_upcoming {
+    time,
+    a {
+      padding-top: var(--base-spacing-unit);
+      display: inline-block;
+    }
+  }
+  
+  .header {
+    margin-top: var(--base-spacing-unit);
+  }
+}
+
+
+// [2] add border-top to the first element after headline
+.events-menu {
+  @include navigation();
+  
+  .year {
+    margin-bottom: var(--base-spacing-unit--sm);
+    
+     > a,
+     > .active {
+      color: inherit;
+      font-weight: var(--headings__font-weight);
+      font-family: var(--headings__font-family);
+    }
+  }
+  
+  .level_2 li {
+    margin-bottom: var(--base-spacing-unit--xs);
+  }
+}

@@ -1,0 +1,135 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/MEDIA
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --gallery__gutter: var(--grid__gutter);
+  --gallery__gutter--half: calc(var(--gallery__gutter) / 2);
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+.image--left img {
+  text-align: left;
+  margin-left: 0;
+}
+
+.image--right img {
+  text-align: right;
+  margin-right: 0;
+}
+
+.image--center img {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ce_gallery {
+  margin-bottom: var(--base-spacing-unit);
+  
+  > ul {  
+    @include make-row();
+    
+    grid-row-gap: var(--grid__gutter);
+    
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  
+    li {    
+      @extend %column-floating;
+    }
+  }
+  
+  .cols_2 {
+    li {
+      @include make-col(6);
+    }
+  }
+  
+  .cols_3 {
+    li {
+      @include make-col(6);
+      
+      @include media-query(screen-md) {
+        @include make-col(4);
+      }
+    }
+  }
+  
+  .cols_4 {
+    li {
+      @include make-col(6);
+      
+      @include media-query(screen-md) {
+        @include make-col(3);
+      }
+    }
+  }
+  
+  .cols_5 {
+    li {
+      @include make-col(6);
+      
+      @include media-query(screen-md) {
+        @include make-col(2);
+      }
+    }
+  }
+  
+  .cols_6 {
+    li {
+      @include make-col(6);
+      
+      @include media-query(screen-md) {
+        @include make-col(2);
+      }
+    }
+  }
+  
+  img {
+    display: block;
+  }
+}
+
+.ce_player,
+.ce_youtube {
+  .video_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ce_player {
+  video {
+    border: 0;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.ce_youtube {
+  iframe,
+  a {
+    border: 0;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

@@ -1,0 +1,31 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+  
+//
+// GENERIC/CONTAO_RESET
+// --------------------------------------------------
+
+// Float classes
+.float_left {
+	float:left;
+}
+
+.float_right {
+	float:right;
+}
+
+// Hide invisible elements
+.invisible {
+	width:0;
+	height:0;
+	left:-1000px;
+	top:-1000px;
+	position:absolute;
+	overflow:hidden;
+	display:inline;
+}

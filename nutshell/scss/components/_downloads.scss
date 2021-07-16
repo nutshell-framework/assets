@@ -1,0 +1,42 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/DOWNLOADS
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --download-link-color:   inherit;
+  --download-link-decoration: none;
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+.ce_download,
+.ce_downloads {
+  margin-bottom: 1rem;
+  
+  .mime_icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  a {
+    display: inline-block;
+    color: var(--download-link-color);
+    text-decoration: var(--download-link-decoration);
+    
+  }
+}
+
+.ce_downloads {
+  @include navigation;
+}

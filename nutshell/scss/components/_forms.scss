@@ -1,0 +1,138 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/FORMS
+// --------------------------------------------------
+
+
+// VARIABLES
+html {
+  --input-border-width:    var(--base-border-width);
+  --input-border-radius:   var(--base-border-radius);
+  --input-border-color:    rgba(0,0,0,0.25);
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// [1] focus-highlighting on inputs was cut off by overflow: hidden
+// [2] reset for FF and Chrome, coming with a min-width
+// [3] force IE8 to wrap long content
+// [4] create half-transparent borders (otherwise you have a half-transparent border using the input background color) 
+// [5] reset height
+// [6] disable mobile safari make it a search field with different border-radius and size
+// [7] reset unusual Firefox-on-Android default style
+// [8] make sure, the whole input is visible (chrome)
+// [9] bring button-text and file-name on same base-line in Chrome
+// [11] space between checkbox/radio + label, when inline
+.ce_form {
+  overflow: visible; // [1]
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0; // [2]
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // [3]
+  margin-bottom: var(--base-spacing-unit--xs);
+}
+
+input.text,
+input.captcha,
+textarea {
+  display: block;
+  width: 100%;
+  padding: calc(var(--base-spacing-unit) / 2) var(--base-spacing-unit);
+  border-radius: var(--input-border-radius);
+  border: var(--input-border-width) solid var(--input-border-color);
+  background-clip: padding-box; // [4]
+
+  background-image: none; // [7]
+}
+
+textarea.textarea {
+  height: auto; // [5]
+}
+
+.widget-text,
+.widget-textarea,
+.widget-password {
+  margin-bottom: var(--base-spacing-unit);
+}
+
+input.submit,
+button.submit {
+  @extend %button;
+  @extend button.btn--primary;
+}
+
+input[type="search"] {
+  -webkit-appearance: none; // [6]
+}
+
+input[type="file"] {
+  display: block;
+  vertical-align: middle;
+  line-height: 1; // [9]
+}
+
+// Checkboxes and radios
+input.radio,
+input.checkbox {
+  margin-left: 1px; // [8]
+  margin-right: var(--base-spacing-unit--xs);
+  line-height: var(--base-line-height);
+  vertical-align: middle;
+  
+  + label {
+    margin-right: var(--base-spacing-unit--xs); // [11]
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+}
+
+select.select {
+  margin-left: var(--base-spacing-unit--xs);
+}
+
+.widget-radio,
+.widget-checkbox,
+.widget-select,
+.widget-upload {
+  margin-bottom: var(--base-spacing-unit);
+  
+  legend {
+    font-weight: 700;
+  }
+}
+
+.radio_container,
+.checkbox_container {
+   > span {
+  	display: inline-flex;
+  	align-items: center;
+  }
+}
+
+// Mandatory & Error-Styling
+// asterisk at mandatory fields
+span.mandatory {
+  color: var(--color-brand);
+}
+
+// error-text
+p.error {
+  margin-bottom: 0;
+}

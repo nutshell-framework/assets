@@ -1,0 +1,58 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/ACCORDION
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --accordion-padding:       var(--base-spacing-unit--sm);
+  --accordion-background:    var(--color-gray-light);
+  
+  
+  --toggler-font-size:       1.5rem;
+  --toggler-background:      var(--color-highlight);
+  --toggler-color:           var(--color-text--inverted);
+  --toggler-color-hover:     var(--color-brand-primary);
+  --toggler-spacing:         var(--base-spacing-unit--xs);
+  --toggler-border:          2px solid transparent;
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// default accordion
+.ce_accordion {
+  margin-bottom: var(--toggler-spacing);
+
+  .toggler {
+    font-size: var(--toggler-font-size);    
+    cursor: pointer;
+    background: var(--toggler-background);
+    color: var(--toggler-color);
+    padding: var(--accordion-padding);
+    border: var(--toggler-border);
+    
+    &:hover {
+      color: var(--toggler-color-hover);
+                  
+    }
+    
+    &:focus {
+      outline: 0;
+    }
+  }
+  
+  .accordion {
+    padding: var(--accordion-padding);
+    background: var(--accordion-background);
+    overflow: hidden;
+  }
+}

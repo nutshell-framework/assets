@@ -1,0 +1,189 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/NAVS
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --nav--main__item-padding: var(--base-spacing-unit);
+  --nav-toggler-top-space:   var(--base-spacing-unit--sm);
+  --nav-toggler-right-space: var(--base-spacing-unit--sm);
+  --nav-toggler-border:      var(--base-border-width) solid currentColor;
+}
+
+// --------------------------------------------------
+
+// general nav class, navigation-mixin resets margin, padding and list-stype-type
+.nav {
+  @include navigation;
+}
+
+.nav--horizontal {
+  ul {
+    display: flex;
+    flex-direction: column;
+    
+    @include media-query(screen-menu) {
+      flex-direction: row;
+    }
+  }
+  
+  a,
+  strong.active,
+  strong.trail,
+  strong.forward  {
+    display: block;
+    padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
+  }
+}
+
+.nav--vertical {
+  a,
+  strong.active,
+  strong.trail,
+  strong.forward  {
+    display: block;
+    padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
+  }
+}
+
+.nav--border {
+  border: var(--base-border);
+  
+  a,
+  strong.active,
+  strong.trail,
+  strong.forward {
+    padding: var(--nav--main__item-padding) var(--nav--main__item-padding);
+    border-bottom: 1px solid var(--base-border-color);
+  
+  
+    &.last {
+      border-bottom: 0;
+    }
+  }
+}
+
+.nav--breadcrumb {
+  border: var(--base-border);
+  padding: var(--base-spacing-unit--sm) var(--base-spacing-unit);
+  display: flex;
+  
+  @include media-query(screen-menu) {
+    flex-direction: column;
+  }
+  
+  li {
+    @include media-query(screen-menu) {
+      padding-right: var(--base-spacing-unit);
+    }
+  }
+  
+  a {    
+    &:after {
+      font-size: 0.75rem;
+      display: inline-block;
+      content: "►";
+      vertical-align: middle;
+      padding-left: var(--base-spacing-unit);
+    }
+  }
+}
+
+.nav--select {
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+    border: var(--base-border);
+    padding: var(--base-spacing-unit--xs) var(--base-spacing-unit--sm);   
+  }
+  
+  .submit {
+    vertical-align: middle;
+    padding: var(--base-spacing-unit--xs) var(--base-spacing-unit--sm);
+  }
+}
+
+.nav--pager {
+  ul {
+    text-align: center;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  .empty {
+    @include invisible;
+  }
+  
+  a {
+    padding: var(--base-spacing-unit--sm);
+  }
+}
+
+.pagination {
+	@include navigation;
+	
+	display: grid;
+  grid-column: 1 / -1;
+  margin-top: var(--base-spacing-unit);
+	text-align: center;
+  line-height: 1;
+  
+  @supports not (display: grid) {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  @include media-query(screen-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+	
+	p {
+    padding: var(--base-spacing-unit--xs);
+    padding-left: 0;
+		margin: var(--base-spacing-unit--xs);
+		margin-left: 0;
+		border-top: var(--base-border-width) solid transparent;
+	}
+	
+	li {
+		display: inline;
+	}
+	
+	a,
+	strong {
+  	display: inline-block;
+		padding: var(--base-spacing-unit--xs);
+		margin: var(--base-spacing-unit--xs);
+	}
+	
+	strong {
+  	border: var(--base-border);
+	}
+	
+	a.next {
+  	margin-right: 0;
+  	padding-right: 0;
+	}
+	
+	@include media-query(screen-sm) {
+  	p {
+  		justify-self: start;
+  	}
+  	
+  	p + ul {
+  		justify-self: end;
+  	}
+	}
+}

@@ -1,0 +1,15 @@
+{
+    "name": "nutshell-framework/components",
+    "type": "contao-component",
+    "description": "Nutshell Framework integration for Contao Open Source CMS",
+    "license": "LGPL-2.1+",
+    "authors": [
+        {
+            "name": "Dennis Erdmann",
+            "homepage": "https://github.com/denniserdmann"
+        }
+    ],
+    "require": {
+        "contao-components/installer": "^1.0.9"
+    }
+}

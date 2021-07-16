@@ -1,0 +1,131 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// BASE/LINKS
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --button-bg:             var(--color-btn);
+  --button-bg-hover:       var(--color-btn);
+  --button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
+  --button-border-radius:  var(--base-border-radius);
+  --button-border-width:   var(--base-border-width);
+  --button-font-family:    var(--base-font-family);
+  --button-font-weight:    400;
+  --button-line-height:    var(--base-line-height);
+}
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// [1] Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+%button {
+  border-radius: var(--button-border-radius);
+  padding: var(--button-spacing);
+  display: inline-block;
+  border: var(--button-border-width) solid transparent;
+  font-family: var(--button-font-family);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  text-align: center;
+  background: transparent;
+  background-image: none; // [1]
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.btn,
+span.btn,
+button.btn {
+  @extend %button;
+  margin-bottom: var(--base-spacing-unit);
+}
+
+a.btn--primary,
+span.btn--primary,
+button.btn--primary {
+  background: var(--button-bg);
+  color: var(--color-btn-text);
+  
+  &:hover {
+    background: var(--button-bg-hover);
+  }
+}
+
+// [1] add margin, when there is another element following
+div.btn,
+.ce_toplink,
+.toplink {
+  
+  > a,
+  > button {
+    @extend %button;
+  }
+  
+  // [1]
+  &:not(:last-child) {
+    margin-bottom: var(--base-spacing-unit);
+  }
+}
+
+div.btn--primary,
+.ce_toplink,
+.toplink {
+
+  > a,
+  > button {    
+    background: var(--button-bg);
+    color: var(--color-btn-text);
+    
+    &:hover {
+      background: var(--button-bg-hover);
+    }
+  }
+}
+
+div.btn--left {
+  text-align: left;
+}
+
+div.btn--center {
+  text-align: center;
+}
+
+div.btn--right {
+  text-align: right;
+}
+
+.btn--floated {
+  float: left;
+  margin-right: var(--base-spacing-unit--xs);
+}
+
+.ce_toplink a,
+.toplink a {
+  text-decoration: none;
+}
+
+
+// used for 
+// * news-reader
+// * events-reader
+// * faq-reader
+// * newsletter-reader
+//
+.back {
+  border-top: var(--base-border);
+  margin-top: var(--base-spacing-unit);
+  padding-top: var(--base-spacing-unit--sm);
+  
+  a {
+    text-decoration: none;
+  }
+}

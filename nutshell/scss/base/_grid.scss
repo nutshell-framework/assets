@@ -1,0 +1,237 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE
+// *
+
+//
+// BASE/GRID
+// --------------------------------------------------
+
+// VARIABLES
+html {
+  --grid__columns:       12;
+  --grid__gutter:        1.875rem; // 30px
+  --grid__gutter--half:  calc(var(--grid__gutter) / 2);
+}
+
+$grid__columns:         12 !default;
+
+// USED FROM _responsive.scss
+// $breakpoints
+
+// --------------------------------------------------
+
+// general row-class
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--grid__columns), 1fr);
+  grid-column-gap: var(--grid__gutter);
+  grid-auto-columns: 1fr;
+
+  @supports not (display: grid) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--grid__gutter) / 2);
+    margin-right: calc(-1 * var(--grid__gutter) / 2);
+  }
+
+  .ie & {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--grid__gutter) / 2);
+    margin-right: calc(-1 * var(--grid__gutter) / 2);
+  }
+}
+
+// column default floating
+%column-floating {
+  grid-column: 1 / -1;
+
+  @supports not(display: grid) {
+    padding-left: var(--grid__gutter--half);
+    padding-right: var(--grid__gutter--half);
+  }
+
+  .ie & {
+    padding-left: var(--grid__gutter--half);
+    padding-right: var(--grid__gutter--half);
+  }
+}
+
+@for $i from 1 through $grid__columns { // [3][4]
+  .col-#{$i} { // [2][3]
+    grid-column: span $i / span $i;
+
+    @supports not (display: grid) {
+      width: percentage($i/$grid__columns);
+    }
+
+    .ie & {
+      width: percentage($i/$grid__columns);
+    }
+  }
+}
+
+// [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
+// [2] $current - actual viewport (e.g. "xs")
+// [3] $i - counter, returns the actual grid-column
+// [4] var(--grid__columns) - go through available columns (e.g. 1 --> 12)
+
+// [5] override clear- class for the next viewport by default
+// this means, you can add a clear-xs class to an element, but the clear will only affect the current viewport.
+@for $size from 1 through length($breakpoints) { // [1]
+  $x:   nth($breakpoints, $size); // [2]
+  $current:   nth($x, 1); // [2]
+
+  // column creation
+  @for $i from 1 through $grid__columns { // [3][4]
+    .col-#{$current}-#{$i} { // [2][3]
+      @extend %column-floating;
+    }
+  }
+
+  // width creation for every col- class
+  @include media-query(screen-#{$current}) { // [2]
+
+    @for $i from 1 through $grid__columns { // [3][4]
+      .col-#{$current}-#{$i} { // [2][3]
+        grid-column: span $i / span $i;
+
+        @supports not (display: grid) {
+          width: percentage($i/$grid__columns);
+        }
+
+        .ie & {
+          width: percentage($i/$grid__columns);
+        }
+      }
+    }
+  }
+
+  // height creation for every row-span- class
+  @include media-query(screen-#{$current}) { // [2]
+
+    @for $i from 1 through $grid__columns { // [3][4]
+      .row-span-#{$current}-#{$i} { // [2][3]
+        grid-row: span $i / span $i;
+      }
+    }
+  }
+
+  // .col-start and .row-start creation
+  @include media-query(screen-#{$current}) { // [2]
+
+    @for $i from 1 through $grid__columns { // [3]
+      .col-start-#{$current}-#{$i} { // [2][3]
+        grid-column-start: $i;
+      }
+      .row-start-#{$current}-#{$i} { // [2][3]
+        grid-row-start: $i;
+      }
+    }
+  }
+
+  //pull-left & -right creation
+  @include media-query(screen-#{$current}) { // [2]
+    .pull-right-#{$current} { // [2]
+      grid-column-end: -1;
+    }
+
+    .pull-left-#{$current} { // [2]
+      grid-row-start: 1;
+      grid-column-end: inherit;
+    }
+  }
+}
+
+// classes for alignment
+// [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
+// [2] $current - actual viewport (e.g. "xs")
+// [3] $i - counter, returns the actual grid-column
+// [4] $grid__columns - go through available columns (e.g. 1 --> 12)
+.justify-start { // [2][3]
+  justify-self: start;
+  text-align: left;
+}
+
+.justify-center { // [2][3]
+  justify-self: center;
+  text-align: center;
+}
+
+.justify-end { // [2][3]
+  justify-self: end;
+  text-align: right;
+}
+
+@for $size from 1 through length($breakpoints) { // [1]
+  $x:   nth($breakpoints, $size); // [2]
+  $current:   nth($x, 1); // [2]
+
+  // width creation for every col- class
+  @include media-query(screen-#{$current}) { // [2]
+
+    .justify-#{$current}-start { // [2][3]
+      justify-self: start;
+      text-align: left;
+    }
+
+    .justify-#{$current}-center { // [2][3]
+      justify-self: center;
+      text-align: center;
+    }
+
+    .justify-#{$current}-end { // [2][3]
+      justify-self: end;
+      text-align: right;
+    }
+  }
+}
+
+.align-start { // [2][3]
+  align-self: start;
+}
+
+.align-center { // [2][3]
+  align-self: center;
+}
+
+.align-end { // [2][3]
+  align-self: end;
+}
+
+@for $size from 1 through length($breakpoints) { // [1]
+  $x:   nth($breakpoints, $size); // [2]
+  $current:   nth($x, 1); // [2]
+
+  // width creation for every col- class
+  @include media-query(screen-#{$current}) { // [2]
+
+    .align-#{$current}-start { // [2][3]
+      align-self: start;
+    }
+
+    .align-#{$current}-center { // [2][3]
+      align-self: center;
+    }
+
+    .align-#{$current}-end { // [2][3]
+      align-self: end;
+    }
+  }
+}
+
+// row-start-1-12
+// row-span-1-12
+@for $i from 1 through $grid__columns { // [1]
+  .row-start-#{$i} { // [2][3]
+      grid-row-start: $i;
+  }
+
+  .row-span-#{$i} { // [2][3]
+      grid-row: span $i / span $i;
+  }
+}
