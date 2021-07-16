@@ -1,5 +1,5 @@
 {
-    "name": "nutshell-framework/components",
+    "name": "nutshell-framework/assets",
     "type": "contao-component",
     "description": "Nutshell Framework integration for Contao Open Source CMS",
     "license": "LGPL-2.1+",
