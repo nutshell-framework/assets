@@ -13,8 +13,6 @@
         "contao-components/installer": "^1.0.9"
     },
     "extra": {
-        "installer-paths": {
-            "{$name}": ["nutshell-framework/assets"]
-        }
+        "contao-components-dir": ""
     }
 }
