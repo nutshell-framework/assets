@@ -13,6 +13,6 @@
         "contao-components/installer": "^1.0.9"
     },
     "extra": {
-        "contao-components-dir": ""
+        "contao-components-dir": "/"
     }
 }
