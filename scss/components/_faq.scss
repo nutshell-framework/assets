@@ -1,0 +1,123 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/FAQ
+// --------------------------------------------------
+
+// VARIABLES
+$faq-border: $base-border !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// [1] call every headline element (h1-h6)
+// [2] headline for FE-Module
+.faq-list {
+  @include navigation();
+  
+  > ul {
+    margin-top: 2rem;
+  }
+  
+  li {
+    margin-bottom: $base-spacing-unit--sm;
+  }
+
+  li a {
+    display: inline-block;
+    
+    &:before {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      padding-bottom: 0.25rem;
+      
+      display: inline-block;
+      content: "►";
+      vertical-align: middle;
+      margin-right: $base-spacing-unit--xs;
+    }
+  }
+  
+  > { 
+    #{headings()} { // [1]
+      margin-bottom: 0;
+      
+      &:after {
+        border-top: $faq-border;
+        content: "";
+        display: block; 
+      }
+    }
+  }
+  
+  article > {
+    #{headings()} { // [1]
+      margin-bottom: 0;
+    
+      &:after {
+        border-top: $faq-border;
+        content: "";
+        display: block; 
+      }
+    }
+  }
+}
+
+.faq-page {
+  > { 
+    #{headings()} { // [1]
+      margin-bottom: 0;
+      
+      &:after {
+        border-top: $faq-border;
+        content: "";
+        display: block; 
+      }
+    }
+  }
+  
+  article > {
+    #{headings()} { // [1]
+      margin-bottom: 0;
+    
+      &:after {
+        border-top: $faq-border;
+        content: "";
+        display: block; 
+      }
+    }
+  }
+  
+  .info {
+    font-size: 0.875rem;    
+    margin-top: $base-spacing-unit;
+    opacity: 0.5;
+  }
+  
+  section {
+    padding: $base-spacing-unit 0;
+    border-bottom: $faq-border;
+    
+    &.last {
+      margin-bottom: $base-spacing-unit;
+    }
+  }
+}
+
+// .faq-reader
+//
+.faq-reader {
+  .info {
+    font-size: 0.875rem;
+   
+    margin-top: $base-spacing-unit;    
+    opacity: 0.5;
+  } 
+}

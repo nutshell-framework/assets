@@ -1,0 +1,131 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/MEDIA
+// --------------------------------------------------
+
+// VARIABLES
+$gallery__gutter: $grid__gutter !default;
+$gallery__gutter--half: ($grid__gutter / 2) !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+.image--left img {
+  text-align: left;
+  margin-left: 0;
+}
+
+.image--right img {
+  text-align: right;
+  margin-right: 0;
+}
+
+.image--center img {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ce_gallery {
+  ul {
+    @extend .clearfix;
+  
+    margin-left: $gallery__gutter--half * -1;
+    margin-right: $gallery__gutter--half * -1;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  li {
+    @include column-floating($gallery__gutter--half);
+    
+    margin-bottom: $gallery__gutter;
+  }
+  
+  .cols_2 {
+    li {
+      width: 50%;
+    }
+  }
+  
+  .cols_3 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: percentage(4/12);
+      }
+    }
+  }
+  
+  .cols_4 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: percentage(3/12);
+      }
+    }
+  }
+  
+  .cols_5 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: 20%;
+      }
+    }
+  }
+  
+  .cols_6 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: percentage(2/12);
+      }
+    }
+  }
+  
+  img {
+    display: block;
+  }
+}
+
+.ce_player,
+.ce_youtube {
+  .video_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ce_player {
+  video {
+    border: 0;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.ce_youtube {
+  iframe {
+    border: 0;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

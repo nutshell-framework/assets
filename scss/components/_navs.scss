@@ -1,0 +1,191 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/NAVS
+// --------------------------------------------------
+
+// VARIABLES
+$nav--main__item-padding: $base-spacing-unit !default;
+$nav-toggler-top-space:   $base-spacing-unit--sm !default;
+$nav-toggler-right-space: $base-spacing-unit--sm !default;
+$nav-toggler-border:      $base-border-width solid currentColor !default;
+
+
+// USED FROM _responsive.scss
+// $offcanvas-nav
+
+// --------------------------------------------------
+
+// general nav class, navigation-mixin resets margin, padding and list-stype-type
+.nav {
+  @include navigation;
+}
+
+.nav--horizontal {
+  ul {
+    @extend %clearfix;
+  }
+  
+  li {
+    @include media-query(screen-offcanvas) {
+      float: left;
+    }
+  }
+  
+  a,
+  span.active,
+  span.trail,
+  strong.active,
+  strong.trail {
+    display: block;
+    padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
+  }
+}
+
+.nav--right {
+  float: right;
+}
+
+.nav--vertical {
+  a,
+  span.active,
+  span.trail,
+  strong.active,
+  strong.trail {
+    display: block;
+    padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
+  }
+}
+
+.nav--border {
+  border: $base-border;
+  
+  a,
+  span.active,
+  span.trail,
+  strong.active,
+  strong.trail {
+    padding: $nav--main__item-padding $nav--main__item-padding;
+    border-bottom: 1px solid $base-border-color;
+  
+  
+    &.last {
+      border-bottom: 0;
+    }
+  }
+}
+
+.nav--breadcrumb {
+  border: $base-border;
+  padding: $base-spacing-unit--sm $base-spacing-unit;
+  ul {
+    @extend %clearfix;
+  }
+  
+  li {
+    @include media-query(screen-offcanvas) {
+      float: left;
+      padding-right: $base-spacing-unit;
+    }
+  }
+  
+  a {    
+    &:after {
+      font-size: 0.75rem;
+      display: inline-block;
+      content: "►";
+      vertical-align: middle;
+      padding-left: $base-spacing-unit;
+    }
+  }
+}
+
+.nav--select {
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+    border: $base-border;
+    padding: $base-spacing-unit--xs $base-spacing-unit--sm;   
+  }
+  
+  .submit {
+    vertical-align: middle;
+    padding: $base-spacing-unit--xs $base-spacing-unit--sm;
+  }
+}
+
+.nav--pager {
+  ul {
+    text-align: center;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  .empty {
+    @include invisible;
+  }
+  
+  a {
+    padding: $base-spacing-unit--sm;
+  }
+}
+
+// [1] clearing floated elements like news--list items
+.pagination {
+	@include navigation;
+  @extend %clearfix;
+  
+  margin-top: $base-spacing-unit;
+	
+	clear: both; // [1]
+	text-align: center;
+  line-height: 1;
+	
+	p {
+    padding: $base-spacing-unit--xs;
+    padding-left: 0;
+		margin: $base-spacing-unit--xs;
+		margin-left: 0;
+		border-top: $base-border-width solid transparent;
+	}
+	
+	li {
+		display: inline;
+	}
+	
+	a,
+	span,
+	strong {
+  	display: inline-block;
+		padding: $base-spacing-unit--xs;
+		margin: $base-spacing-unit--xs;
+	}
+	
+	span,
+	strong {
+  	border: $base-border;
+	}
+	
+	a.next {
+  	margin-right: 0;
+  	padding-right: 0;
+	}
+	
+	@include media-query(screen-sm) {
+  	p {
+  		float: left;
+  	}
+  	
+  	p + ul {
+  		float: right;
+  	}
+	}
+}

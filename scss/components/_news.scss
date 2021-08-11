@@ -1,0 +1,195 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/NEWS
+// --------------------------------------------------
+
+// VARIABLES
+$news-border: $base-border !default;
+
+$news-grid-columns--sm: 2 !default;
+$news-grid-columns--md: 2 !default;
+$news-grid-columns--lg: 3 !default;
+
+// USED FROM _variables.scss
+// $base-spacing-unit
+// $headings__font-weight;
+// $headings__font-family;
+// $heading__size-4
+// $heading__l-h--4
+// $heading__m-t--4
+// $heading__m-b--4
+// $color-links
+
+// --------------------------------------------------
+
+// news list
+// [1] call every headline element (h1-h6)
+// [2] headline for FE-Module
+.news-list {
+  margin-bottom: $base-spacing-unit;
+  
+  > { 
+    #{headings()} {
+      margin-bottom: 0;
+      
+      &:after {
+        border-top: $news-border;
+         
+        content: "";
+        display: block; 
+      }
+    }
+  }
+  
+  .info {
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+  
+  .image_container {
+    margin-top: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit;
+  }
+    
+  .float_left {
+    margin-right: $base-spacing-unit;
+  }
+  
+  .float_right {
+    margin-left: $base-spacing-unit;
+  } 
+  
+  .layout_short,
+  .layout_latest,
+  .layout_simple {
+    @extend %clearfix;
+    
+    > { 
+      #{headings()} { 
+        margin-top: $base-spacing-unit;
+      }
+    }
+    
+    &:after {
+      border-bottom: $base-border;
+      margin-top: $base-spacing-unit;
+      content: "";
+      display: block;
+    }
+  }
+  
+  .layout_simple,
+  .layout_upcoming {
+    time,
+    a {
+      padding-top: $base-spacing-unit;
+      display: inline-block;
+    }
+  }
+  
+  .header {
+    margin-top: $base-spacing-unit;
+  }
+}
+
+.news-grid {
+  @include make-row;
+  
+  margin-bottom: $base-spacing-unit;
+  
+  > { 
+    #{headings()} {
+      @include padding-default;
+      
+      &:after {
+        border-top: $news-border;
+        content: "";
+        display: block; 
+      }
+    }
+  }
+
+  .layout_short,
+  .layout_latest,
+  .layout_simple {
+    @include column-floating;
+    
+    margin-top: $base-spacing-unit;
+    
+    @include media-query(screen-sm) {
+      @include make-col((12 / $news-grid-columns--sm));
+      
+      &:nth-of-type(#{$news-grid-columns--sm + n} + 1) {
+        clear:both;
+      }
+    }
+    
+    @include media-query(screen-md) {
+      @include make-col((12 / $news-grid-columns--md));
+      
+      &:nth-of-type(n) {
+        clear: none;
+      }
+      
+      &:nth-of-type(#{$news-grid-columns--md + n} + 1) {
+        clear: both; 
+      }
+    }
+    
+    @include media-query(screen-lg) {
+      @include make-col((12 / $news-grid-columns--lg));
+      
+      &:nth-of-type(n) {
+        clear: none;
+      }
+      
+      &:nth-of-type(#{$news-grid-columns--lg + n} + 1) {
+        clear: both; 
+      }
+    }
+  }
+  
+  .layout_simple {
+    time {
+      display: block;
+    }
+  }
+}
+
+.news-menu {
+  @include navigation();
+  
+  > { 
+    #{headings()} {
+      
+      &:after {
+        border-top: $news-border;
+         
+        content: "";
+        display: block; 
+      }
+    }
+  }
+    
+  .year {
+    margin-bottom: $base-spacing-unit--sm;
+    
+     > a,
+     > .active {
+      color: inherit;
+      font-weight: $headings__font-weight;
+      font-family: $headings__font-family;
+    }
+  }
+  
+  .level_2 li {
+    margin-bottom: $base-spacing-unit--xs;
+  }
+}
