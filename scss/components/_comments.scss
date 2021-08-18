@@ -40,7 +40,7 @@ $color-error: #f00 !default;
   
   .submit {
     @extend %button;
-    @extend %btn--primary;
+    @extend %button--primary;
   }
 }
 
