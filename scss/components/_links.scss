@@ -39,22 +39,27 @@ $button-line-height:    $base-line-height !default;
   white-space: nowrap;
 }
 
-a.btn,
-span.btn,
-button.btn {
-  @extend %button;
-  margin-bottom: $base-spacing-unit;
-}
-
-a.btn--primary,
-span.btn--primary,
-button.btn--primary {
+%button--primary {
   background: $button-bg;
   color: $color-btn-text;
   
   &:hover {
     background: $button-bg-hover;
   }
+}
+
+a.btn,
+span.btn,
+button.btn {
+  @extend %button;
+  
+  margin-bottom: $base-spacing-unit;
+}
+
+a.btn--primary,
+span.btn--primary,
+button.btn--primary {
+  @extend %button--primary;
 }
 
 // [1] add margin, when there is another element following
@@ -79,12 +84,7 @@ div.btn--primary,
 
   > a,
   > button {    
-    background: $button-bg;
-    color: $color-btn-text;
-    
-    &:hover {
-      background: $button-bg-hover;
-    }
+    @extend %button--primary;
   }
 }
 
