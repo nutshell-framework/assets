@@ -23,19 +23,19 @@ $wrapper-max:         66.625em !default; // ~1200px [1]
 $breakpoints: (
   xs: (
     min:        0,
-    max:        (34.375em - 0.02px), // 549px
+    max:        (34.375em - 0.0625em), // 549px
   ),
   sm: (
     min:        34.375em, // 550px
-    max:        (48em - 0.02px), // 767px
+    max:        (48em - 0.0625em), // 767px
   ),
   md: (
     min:        48em, // 768px
-    max:        (58.75em - 0.02px), // 939px
+    max:        (58.75em - 0.0625em), // 939px
   ),
   lg: (
     min:        58.75em, // 940px
-    max:        (68.75em - 0.02px), // 1099px
+    max:        (68.75em - 0.0625em), // 1099px
   ),
   xl: (
     min:        68.75em, // 1100px
@@ -47,7 +47,7 @@ $breakpoints: (
 $additional_breakpoints: (
   menu: (
     min:        48em, // 768px
-    max:        (48em - 0.02px), // 767px
+    max:        (48em - 0.0625em), // 767px
   )
 ) !default;
 
