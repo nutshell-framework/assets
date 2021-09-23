@@ -61,6 +61,10 @@ $grid__columns:         12 !default;
   }
 }
 
+.col {
+  grid-column: 1 / -1;
+}
+
 @for $i from 1 through $grid__columns { // [3][4]
   .col-#{$i} { // [2][3]
     grid-column: span $i / span $i;
