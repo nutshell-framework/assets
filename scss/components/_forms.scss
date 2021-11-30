@@ -12,6 +12,8 @@
 
 
 // VARIABLES
+$set-select-height: false;
+
 html {
   --input-border-width:    var(--base-border-width);
   --input-border-radius:   var(--base-border-radius);
@@ -32,6 +34,8 @@ html {
 // [8] make sure, the whole input is visible (chrome)
 // [9] bring button-text and file-name on same base-line in Chrome
 // [11] space between checkbox/radio + label, when inline
+// [12] make sure select and inputs have the same height
+// calculation: ((1rem for text + base-spacing-unit for padding) * 1.2 normal line-height) - 2px for border
 .ce_form {
   overflow: visible; // [1]
 }
@@ -51,15 +55,22 @@ label {
 
 input.text,
 input.captcha,
-textarea {
+textarea.textarea,
+select.select {
   display: block;
   width: 100%;
-  padding: calc(var(--base-spacing-unit) / 2) var(--base-spacing-unit);
+  padding: var(--base-spacing-unit--sm) var(--base-spacing-unit--sm);
   border-radius: var(--input-border-radius);
   border: var(--input-border-width) solid var(--input-border-color);
   background-clip: padding-box; // [4]
-
   background-image: none; // [7]
+  line-height: normal;
+}
+
+@if($set-select-height==true) {
+  select.select {
+    height: calc(((1rem + var(--base-spacing-unit)) * 1.2) - 2px); // [12]
+  }
 }
 
 textarea.textarea {
@@ -84,7 +95,6 @@ input[type="search"] {
 
 input[type="file"] {
   display: block;
-  vertical-align: middle;
   line-height: 1; // [9]
 }
 
@@ -101,10 +111,6 @@ input.checkbox {
     margin-bottom: 0;
     font-weight: normal;
   }
-}
-
-select.select {
-  margin-left: var(--base-spacing-unit--xs);
 }
 
 .widget-radio,
