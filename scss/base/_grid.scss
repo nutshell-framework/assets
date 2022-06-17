@@ -49,6 +49,7 @@ $grid__columns:         12 !default;
 // column default floating
 %column-floating {
   grid-column: 1 / -1;
+  max-width: 100%;
 
   @supports not(display: grid) {
     padding-left: var(--grid__gutter--half);
