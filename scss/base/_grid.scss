@@ -78,6 +78,14 @@ $grid__columns:         12 !default;
       width: percentage($i/$grid__columns);
     }
   }
+
+  .row-start-#{$i} { // [2][3]
+      grid-row-start: $i;
+  }
+
+  .row-span-#{$i} { // [2][3]
+      grid-row: span $i / span $i;
+  }
 }
 
 // [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
@@ -226,17 +234,5 @@ $grid__columns:         12 !default;
     .align-#{$current}-end { // [2][3]
       align-self: end;
     }
-  }
-}
-
-// row-start-1-12
-// row-span-1-12
-@for $i from 1 through $grid__columns { // [1]
-  .row-start-#{$i} { // [2][3]
-      grid-row-start: $i;
-  }
-
-  .row-span-#{$i} { // [2][3]
-      grid-row: span $i / span $i;
   }
 }
