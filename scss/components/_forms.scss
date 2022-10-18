@@ -76,7 +76,7 @@ button.submit {
 }
 
 input[type="search"] {
-  -webkit-appearance: none; // [6]
+  appearance: none; // [6]
 }
 
 input[type="file"] {
