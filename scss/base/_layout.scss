@@ -10,16 +10,6 @@
 // BASE/LAYOUT
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --header-color-background:   var(--color-page-background);
-  --header-color-text:         var(--color-text);
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // #header
 [id="header"] {
   background: var(--header-color-background);
@@ -30,13 +20,6 @@ html {
     @include padding-default;
   }
 }
-
-
-// #container
-[id="container"] {
-
-}
-
 
 // #main
 // [1] make sure object-fit-images always show up 

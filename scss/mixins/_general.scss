@@ -10,13 +10,6 @@
 // MIXINS/GENERAL
 // --------------------------------------------------
 
-// VARIABLES
-$grid__columns: 12 !default;
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // basic styles for lists used as navs
 @mixin navigation() {
   ul {

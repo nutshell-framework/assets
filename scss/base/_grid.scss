@@ -10,20 +10,6 @@
 // BASE/GRID
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --grid__columns:       12;
-  --grid__gutter:        1.875rem; // 30px
-  --grid__gutter--half:  calc(var(--grid__gutter) / 2);
-}
-
-$grid__columns:         12 !default;
-
-// USED FROM _responsive.scss
-// $breakpoints
-
-// --------------------------------------------------
-
 // general row-class
 .row {
   display: grid;
