@@ -3,9 +3,9 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
-  
+
 //
 // VARIABLES
 // --------------------------------------------------
@@ -17,62 +17,61 @@ html {
   --color-gray-dark:          #222;
   --color-gray:               #555;
   --color-gray-light:         #ccc;
-  
+
   --color-brand:              var(--color-default);
   --color-highlight:          var(--color-brand);
-  
+
   // Page
   --color-page-background:    #fff;
   --color-text:               var(--color-gray-dark);
   --color-text--inverted:     var(--color-page-background);
-  
+
   // Links
   --color-links:              var(--color-highlight);
-  
+
   // Buttons
   --color-btn:                var(--color-links);
   --color-btn-text:           var(--color-text--inverted);
-  
+
   // Fonts
   --base-font-size--xs:       0.875rem;
   --base-font-size:           1rem;
   --base-font-size--xl:       1.125rem;
-  
+
   --base-line-height:         1.625;
   --base-font-weight:         400;
-  
+
   --base-font-family:         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
-  
+
   // Base Spacing Units
   --base-spacing-unit: 1rem;
-  
   --base-spacing-unit--xs:    calc(var(--base-spacing-unit) / 4);
   --base-spacing-unit--sm:    calc(var(--base-spacing-unit) / 2);
-  
   --base-spacing-unit--lg:    calc(var(--base-spacing-unit) * 2);
   --base-spacing-unit--xl:    calc(var(--base-spacing-unit) * 4);
-  
+
   // Border
   --base-border-radius:       4px;
   --base-border-width:        1px;
   --base-border-color:        var(--color-gray-light);
-  
   --base-border:              var(--base-border-width) solid var(--base-border-color);
 
-  //MIXINS
-  // MIXINS/GENERAL
-  $grid__columns: 12;
-
+  // --------------------------------------------------
 
   // BASE
+
   // BASE/GRID
   --grid__columns:       12;
   --grid__gutter:        1.875rem; // 30px
   --grid__gutter--half:  calc(var(--grid__gutter) / 2);
 
+  // --------------------------------------------------
+
   // BASE/LAYOUT
   --header-color-background:   var(--color-page-background);
   --header-color-text:         var(--color-text);
+
+  // --------------------------------------------------
 
   // BASE/TYPE
   --headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
@@ -87,6 +86,8 @@ html {
   --hr-border: var(--base-border);
   --paragraph__link-decoration: underline;
   --paragraph__link-decoration--hover: none;
+
+  // --------------------------------------------------
 
   $headlines: (
     h1: (
@@ -163,3 +164,54 @@ html {
     ),
   ) !default;
 }
+
+// SASS-VARIABLES
+
+//MIXINS
+
+// MIXINS/GENERAL
+$grid__columns: 12;
+
+// --------------------------------------------------
+
+// MIXINS/RESPONSIVE
+// NOTE: we use 'em' as unit as you get cross-browser problems, when you
+// change the browser base font-size, see http://zellwk.com/blog/media-query-units/
+// [1] in fact 66.625em = 1066px, but 1066px, but since we have a font-size increase at screen-xl-min,
+//     we end up at ~1200px (see _page.scss)
+
+$wrapper-max:         66.625em !default; // ~1200px [1]
+$max-diff:            0.00125em !default; // means 0.02 Pixel, see https://github.com/twbs/bootstrap/blob/v5.0.0/scss/mixins/_breakpoints.scss#L34-L47
+
+// $breakpoints: will be used in _grid.scss to generate grid classes
+$breakpoints: (
+  xs: (
+    min:        0,
+    max:        (34.375em - $max-diff), // 549px
+  ),
+  sm: (
+    min:        34.375em, // 550px
+    max:        (48em - $max-diff), // 767px
+  ),
+  md: (
+    min:        48em, // 768px
+    max:        (58.75em - $max-diff), // 939px
+  ),
+  lg: (
+    min:        58.75em, // 940px
+    max:        (68.75em - $max-diff), // 1099px
+  ),
+  xl: (
+    min:        68.75em, // 1100px
+    max:        "none"
+  ),
+) !default;
+
+$additional_breakpoints: (
+  menu: (
+    min:        48em, // 768px
+    max:        (48em - $max-diff), // 767px
+  )
+) !default;
+
+$all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
