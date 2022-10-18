@@ -10,15 +10,6 @@
 // COMPONENTS/MEDIA
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --gallery__gutter: var(--grid__gutter);
-  --gallery__gutter--half: calc(var(--gallery__gutter) / 2);
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
 .image--left img {
   text-align: left;
   margin-left: 0;

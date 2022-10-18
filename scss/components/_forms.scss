@@ -10,22 +10,6 @@
 // COMPONENTS/FORMS
 // --------------------------------------------------
 
-
-// VARIABLES
-$set-select-height: false;
-
-html {
-  --input-border-width:    var(--base-border-width);
-  --input-border-radius:   var(--base-border-radius);
-  --input-border-color:    rgba(0,0,0,0.25);
-
-  --mandatory--color: var(--color-brand);
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // [1] focus-highlighting on inputs was cut off by overflow: hidden
 // [2] reset for FF and Chrome, coming with a min-width
 // [3] force IE8 to wrap long content

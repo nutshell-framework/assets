@@ -10,24 +10,6 @@
 // COMPONENTS/ACCORDION
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --accordion-padding:       var(--base-spacing-unit--sm);
-  --accordion-background:    var(--color-gray-light);
-  
-  
-  --toggler-font-size:       1.5rem;
-  --toggler-background:      var(--color-highlight);
-  --toggler-color:           var(--color-text--inverted);
-  --toggler-color-hover:     var(--color-brand-primary);
-  --toggler-spacing:         var(--base-spacing-unit--xs);
-  --toggler-border:          2px solid transparent;
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // default accordion
 .ce_accordion {
   margin-bottom: var(--toggler-spacing);
@@ -42,7 +24,6 @@ html {
     
     &:hover {
       color: var(--toggler-color-hover);
-                  
     }
     
     &:focus {

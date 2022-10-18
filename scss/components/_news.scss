@@ -10,27 +10,6 @@
 // COMPONENTS/NEWS
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --news-border: var(--base-border);
-}
-
-$news-grid-columns--sm: 2 !default;
-$news-grid-columns--md: 2 !default;
-$news-grid-columns--lg: 3 !default;
-
-// USED FROM _variables.scss
-// $base-spacing-unit
-// $headings__font-weight;
-// $headings__font-family;
-// $heading__size-4
-// $heading__l-h--4
-// $heading__m-t--4
-// $heading__m-b--4
-// $color-links
-
-// --------------------------------------------------
-
 // news list
 // [1] call every headline element (h1-h6)
 // [2] headline for FE-Module

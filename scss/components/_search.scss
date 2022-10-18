@@ -10,20 +10,6 @@
 // COMPONENTS/SEARCH
 // --------------------------------------------------
 
-// VARIABLES
-$search-hide-label:       true !default;
-
-
-html {
-  --search-color-relevance:  var(--color-gray);
-  --search-color-url:        var(--color-gray);
-}
-
-// USED FROM _variables.scss
-// * var(--base-spacing-unit--sm);
-
-// --------------------------------------------------
-
 // [1] let the text-input grow until submit-button hits the maximum width
 // [2] reset margin-bottom, otherwise the button will grow on text-input height+margin
 // [3] align at the bottom so that it doesn't matter, if the input has a label

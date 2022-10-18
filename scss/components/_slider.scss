@@ -10,26 +10,8 @@
 // COMPONENTS/SLIDER
 // --------------------------------------------------
 
-// VARIABLES
-// [1] some fonts use different sizes for left and right arrow. 
-//     We take Arial to make sure it has the same size.
-
-html {
-  --arrow-color:               inherit;
-  --arrow-size:                2rem;
-  --arrow-font-family:         'Arial';
-  --menu-point-size:           2rem;
-  --menu-point-color:          inherit;
-  --menu-point-color--active:  var(--color-brand);
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // template changes:
 // .ce_slider_stop - put label inside span.invisible containers, so that we can use arrows
-
 
 // default slider
 // NOTES:

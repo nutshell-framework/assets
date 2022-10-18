@@ -10,16 +10,6 @@
 // COMPONENTS/NAVS
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --nav--main__item-padding: var(--base-spacing-unit);
-  --nav-toggler-top-space:   var(--base-spacing-unit--sm);
-  --nav-toggler-right-space: var(--base-spacing-unit--sm);
-  --nav-toggler-border:      var(--base-border-width) solid currentColor;
-}
-
-// --------------------------------------------------
-
 // general nav class, navigation-mixin resets margin, padding and list-stype-type
 .nav {
   @include navigation;

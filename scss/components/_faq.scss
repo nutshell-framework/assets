@@ -10,15 +10,6 @@
 // COMPONENTS/FAQ
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --faq-border: var(--base-border);
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // [1] call every headline element (h1-h6)
 // [2] headline for FE-Module
 .faq-list {

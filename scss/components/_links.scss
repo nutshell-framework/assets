@@ -10,22 +10,6 @@
 // BASE/LINKS
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --button-bg:             var(--color-btn);
-  --button-bg-hover:       var(--color-btn);
-  --button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
-  --button-border-radius:  var(--base-border-radius);
-  --button-border-width:   var(--base-border-width);
-  --button-font-family:    var(--base-font-family);
-  --button-font-weight:    400;
-  --button-line-height:    var(--base-line-height);
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 // [1] Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 %button {
   border-radius: var(--button-border-radius);

@@ -10,18 +10,6 @@
 // COMPONENTS/TABLES
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --table-border-width:      1px;
-  --table-border-style:      solid;
-  --table-border-color:      #ccc;
-  --table-background-light:  #eee;
-}
-
-// USED FROM _variables.scss
-
-// --------------------------------------------------
-
 table,
 %table {
     margin-bottom: var(--base-spacing-unit);

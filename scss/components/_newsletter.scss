@@ -10,18 +10,6 @@
 // COMPONENTS/NEWSLETTER
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --newsletter-list-border:    var(--base-border);
-  --newsletter-reader-width:   600px;
-  --newsletter-reader-border:  var(--base-border);
-}
-
-// USED FROM _variables.scss
-// $base-spacing-unit--sm
-
-// --------------------------------------------------
-
 // [1] let the text-input grow until submit-button hits the maximum width
 // [2] reset margin-bottom, otherwise the button will grow on text-input height+margin
 // [3] makes error 100% width, instead of standing left to the text-input

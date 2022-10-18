@@ -10,18 +10,6 @@
 // COMPONENTS/COMMENTS
 // --------------------------------------------------
 
-// VARIABLES
-html {
-  --color-error: rgba(255, 0, 0, 1);
-  --color-error-light: rgba(255, 0, 0, 0.5);
-}
-
-// USED FROM _variables.scss
-// var(--base-spacing-unit);
-
-// --------------------------------------------------
-
-
 // default comments, used for news and as content element
 .ce_comments {
   overflow: visible;
