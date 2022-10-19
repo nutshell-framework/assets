@@ -1,0 +1,146 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE
+// *
+
+//
+// CONFIG
+// --------------------------------------------------
+$config: true;
+
+
+// MIXINS/GENERAL
+$grid__columns: 12 !default;
+// ----------------------------------------------------
+
+// MIXINS/RESPONSIVE
+$wrapper-max:         66.625em !default; // ~1200px [1]
+$max-diff:            0.00125em !default; // means 0.02 Pixel, see https://github.com/twbs/bootstrap/blob/v5.0.0/scss/mixins/_breakpoints.scss#L34-L47
+
+// $breakpoints: will be used in _grid.scss to generate grid classes
+$breakpoints: (
+  xs: (
+    min:        0,
+    max:        (34.375em - $max-diff), // 549px
+  ),
+  sm: (
+    min:        34.375em, // 550px
+    max:        (48em - $max-diff), // 767px
+  ),
+  md: (
+    min:        48em, // 768px
+    max:        (58.75em - $max-diff), // 939px
+  ),
+  lg: (
+    min:        58.75em, // 940px
+    max:        (68.75em - $max-diff), // 1099px
+  ),
+  xl: (
+    min:        68.75em, // 1100px
+    max:        "none"
+  ),
+) !default;
+
+$additional_breakpoints: (
+  menu: (
+    min:        48em, // 768px
+    max:        (48em - $max-diff), // 767px
+  )
+) !default;
+
+$all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
+// ----------------------------------------------------
+
+// BASE/TYPE
+$headlines: (
+  h1: (
+    sizes: (
+      xs: 2.0rem,
+      sm: 2.0rem,
+      md: 2.25rem,
+      lg: 2.25rem,
+      xl: 2.25rem
+    ),
+    line-height: 1.55,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h2: (
+    sizes: (
+      xs: 1.625rem,
+      sm: 1.625rem,
+      md: 1.750rem,
+      lg: 1.750rem,
+      xl: 1.750rem
+    ),
+    line-height: 1.5,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h3: (
+    sizes: (
+      xs: 1.375rem,
+      sm: 1.375rem,
+      md: 1.500rem,
+      lg: 1.500rem,
+      xl: 1.500rem
+    ),
+    line-height: 1.25,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h4: (
+    sizes: (
+      xs: 1.125rem,
+      sm: 1.125rem,
+      md: 1.250rem,
+      lg: 1.250rem,
+      xl: 1.250rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+  h5: (
+    sizes: (
+      xs: 1rem,
+      sm: 1rem,
+      md: 1rem,
+      lg: 1rem,
+      xl: 1rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+  h6: (
+    sizes: (
+      xs: 0.875rem,
+      sm: 0.875rem,
+      md: 0.875rem,
+      lg: 0.875rem,
+      xl: 0.875rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+) !default;
+// ----------------------------------------------------
+
+// COMPONENTS/FORMS
+$set-select-height: false !default;
+// ----------------------------------------------------
+
+// COMPONENTS/NEWS
+$news-grid-columns--sm: 2 !default;
+$news-grid-columns--md: 2 !default;
+$news-grid-columns--lg: 3 !default;
+// ----------------------------------------------------
+
+// COMPONENTS/SEARCH
+$search-hide-label:       true !default;
+// ----------------------------------------------------
