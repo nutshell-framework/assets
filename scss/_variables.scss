@@ -9,8 +9,10 @@
 //
 // VARIABLES
 // --------------------------------------------------
-@if $config == false {
-  @debug '_config.scss needs to be imported';
+$config: null !default;
+
+@if $config == null {
+  @warn '_config.scss needs to be imported';
 }
 
 // General Colors
