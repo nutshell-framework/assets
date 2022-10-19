@@ -9,13 +9,6 @@
 //
 // VARIABLES
 // --------------------------------------------------
-$config: null !default;
-
-@if $config == null {
-  @warn '_config.scss needs to be imported';
-}
-
-// General Colors
 
 html {
   // GENERAL/COLORS
