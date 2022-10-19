@@ -9,7 +9,7 @@
 //
 // VARIABLES
 // --------------------------------------------------
-@if ($config!= true) {
+@if $config == false {
   @debug '_config.scss needs to be imported';
 }
 
