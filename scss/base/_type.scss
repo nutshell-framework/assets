@@ -12,9 +12,9 @@
 
 // Headings 1–6.
 #{headings()} { // [1]
-  font-weight: var(--headings__font-weight);
-  font-family: var(--headings__font-family);
-  color: var(--headings__color);
+  font-weight: var(--headings-font-weight);
+  font-family: var(--headings-font-family);
+  color: var(--headings-color);
 }
 
 // H1 — h6: Generate Element Styles from config
@@ -32,7 +32,6 @@ $headings: 6;
     line-height: var(--h#{$i}-lh);
     //margin-top: var(--h#{$i}-mt);
     margin-bottom: var(--h#{$i}-mb);
-    color: var(--headings__color);
 
     @for $size from 2 through length($breakpoints) { // [1]
       $x:   nth($breakpoints, $size); // [2]
