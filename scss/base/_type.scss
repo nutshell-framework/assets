@@ -39,7 +39,7 @@ $headings: 6;
       $viewport: nth($current, 1);
 
       @include media-query(screen-#{$viewport}) {
-        --h#{$i}-fs: var(--h#{$i}-font-size-#{$current});
+        --h#{$i}-font-size: var(--h#{$i}-font-size-#{$current});
       }
     }
   }
