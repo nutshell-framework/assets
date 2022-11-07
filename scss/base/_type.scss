@@ -34,10 +34,10 @@ $headings: 6;
     margin-bottom: var(--h#{$i}-mb);
     color: var(--headings__color);
 
-    @for $i from 2 through length($sizes) {
-      $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
+    @for $size from 1 through length($breakpoints) { // [1]
+      $x:   nth($breakpoints, $size); // [2]
+      $current:   nth($x, 1); // [2]
       $viewport: nth($current, 1);
-      $font-size: nth($current, 2);
 
       @include media-query(screen-#{$viewport}) {
         font-size: var(--h#{$i}-fs-#{$current});
