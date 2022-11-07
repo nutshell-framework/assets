@@ -34,7 +34,7 @@ $headings: 6;
     margin-bottom: var(--h#{$i}-mb);
     color: var(--headings__color);
 
-    @for $size from 1 through length($breakpoints) { // [1]
+    @for $size from 2 through length($breakpoints) { // [1]
       $x:   nth($breakpoints, $size); // [2]
       $current:   nth($x, 1); // [2]
       $viewport: nth($current, 1);
