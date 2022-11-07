@@ -28,10 +28,10 @@
 $headings: 6;
 @for $i from 1 through $headings { // [3][4]
   %_h#{$i} {
-    font-size: var(--h#{$i}-fs);
-    line-height: var(--h#{$i}-lh);
-    //margin-top: var(--h#{$i}-mt);
-    margin-bottom: var(--h#{$i}-mb);
+    font-size: var(--h#{$i}-font-size);
+    line-height: var(--h#{$i}-line-height);
+    margin-top: var(--h#{$i}-margin-top);
+    margin-bottom: var(--h#{$i}-margin-bottom);
 
     @for $size from 2 through length($breakpoints) { // [1]
       $x:   nth($breakpoints, $size); // [2]
@@ -39,7 +39,7 @@ $headings: 6;
       $viewport: nth($current, 1);
 
       @include media-query(screen-#{$viewport}) {
-        --h#{$i}-fs: var(--h#{$i}-fs-#{$current});
+        --h#{$i}-fs: var(--h#{$i}-font-size-#{$current});
       }
     }
   }
