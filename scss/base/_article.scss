@@ -7,24 +7,27 @@
 // *
 
 //
-// BASE/LAYOUT
+// BASE/ARTICLE
 // --------------------------------------------------
 
-// #header
-[id="header"] {
-  background: var(--header-color-background);
-  color: var(--header-color-text);
+// [1] make sure object-fit-images always show up
+.mod_article {
+  position: relative; // [1]
 
   > .inside {
     @include wrapper-max;
     @include padding-default;
+
+    padding-top: var(--article-spacing-top);
+    padding-bottom: var(--article-spacing-bottom);
   }
 }
 
-// #footer
-[id="footer"] {
+.article--full {
   > .inside {
-    @include wrapper-max;
-    @include padding-default;
+    @include wrapper-max(none);
+
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
