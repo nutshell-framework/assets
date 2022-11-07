@@ -10,13 +10,6 @@
 // BASE/TYPE
 // --------------------------------------------------
 
-// Headings 1–6.
-#{headings()} { // [1]
-  font-weight: var(--headings-font-weight);
-  font-family: var(--headings-font-family);
-  color: var(--headings-color);
-}
-
 // H1 — h6: Generate Element Styles from config
 // [1] more space between last text-element and new headline
 // [2] combined headlines - example: h1 + h2
@@ -28,8 +21,11 @@
 $headings: 6;
 @for $i from 1 through $headings { // [3][4]
   %_h#{$i} {
+    font-family: var(--h#{$i}-font-family);
     font-size: var(--h#{$i}-font-size);
+    font-weight: var(--h#{$i}-font-weight);
     line-height: var(--h#{$i}-line-height);
+    color: var(--h#{$i}-color);
     margin-top: var(--h#{$i}-margin-top);
     margin-bottom: var(--h#{$i}-margin-bottom);
 
