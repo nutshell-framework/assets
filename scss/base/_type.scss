@@ -43,7 +43,11 @@ $headings: 6;
         font-size: var(--h#{$i}-fs-#{$current});
       }
     }
+  }
 
+  h#{$i},
+  .heading--#{$i} {
+    @extend %_h#{$i};
   }
 }
 
