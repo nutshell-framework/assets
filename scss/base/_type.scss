@@ -25,6 +25,29 @@
 // [5] base font size
 // [6] loop through all viewports and add font-size for every viewport
 
+$headings: 6;
+@for $i from 1 through $headings { // [3][4]
+  %_h#{$i} {
+    font-size: var(--h#{$i}-fs);
+    line-height: var(--h#{$i}-lh);
+    //margin-top: var(--h#{$i}-mt);
+    margin-bottom: var(--h#{$i}-mb);
+    color: var(--headings__color);
+
+    @for $i from 2 through length($sizes) {
+      $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
+      $viewport: nth($current, 1);
+      $font-size: nth($current, 2);
+
+      @include media-query(screen-#{$viewport}) {
+        font-size: var(--h#{$i}-fs-#{$current});
+      }
+    }
+
+  }
+}
+
+/*
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);
 
@@ -96,6 +119,7 @@
     }
   }
 }
+*/
 
 // Paragraph, Lists
 p,
