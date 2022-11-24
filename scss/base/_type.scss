@@ -26,8 +26,8 @@ $headings: 6;
     font-weight: var(--h#{$i}-font-weight);
     line-height: var(--h#{$i}-line-height);
     color: var(--h#{$i}-color);
-    margin-top: var(--h#{$i}-margin-top);
-    margin-bottom: var(--h#{$i}-margin-bottom);
+    margin-top: var(--h#{$i}-spacing-top);
+    margin-bottom: var(--h#{$i}-spacing-bottom);
 
     @for $size from 2 through length($breakpoints) { // [1]
       $x:   nth($breakpoints, $size); // [2]
