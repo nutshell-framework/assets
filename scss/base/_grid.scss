@@ -14,7 +14,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(var(--grid__columns), minmax(0, 1fr));
-  gap: var(--grid__gutter);
+  column-gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
 
   @supports not (display: grid) {
@@ -30,6 +30,10 @@
     margin-left: calc(-1 * var(--grid__gutter) / 2);
     margin-right: calc(-1 * var(--grid__gutter) / 2);
   }
+}
+
+.row--gap-y {
+  row-gap: var(--grid__gutter);
 }
 
 // column default floating
