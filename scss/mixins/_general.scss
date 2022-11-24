@@ -3,9 +3,9 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
-  
+
 //
 // MIXINS/GENERAL
 // --------------------------------------------------
@@ -17,7 +17,7 @@
     margin: 0;
     padding: 0;
   }
-    
+
   a {
 	  text-decoration: none;
   }
@@ -29,19 +29,19 @@
 }
 
 // make-row
-@mixin make-row($total__columns: $grid__columns) {
+@mixin make-row($total__columns: $grid__columns, $grid__gutter: var(--grid__gutter)) {
   display: grid;
   grid-template-columns: repeat($total__columns, 1fr);
-  grid-column-gap: var(--grid__gutter);
+  grid-column-gap: $grid__gutter;
   grid-auto-columns: 1fr;
-  
+
   @supports not (display: grid) {
     display: flex;
     flex-wrap: wrap;
     margin-left: calc(-1 * var(--grid__gutter) / 2);
     margin-right: calc(-1 * var(--grid__gutter) / 2);
   }
-  
+
   .ie & {
     display: flex;
     flex-wrap: wrap;
@@ -53,12 +53,12 @@
 // column-floating
 @mixin column-floating() {
   grid-column: 1 / -1;
-  
+
   @supports not(display: grid) {
     padding-left: var(--grid__gutter--half);
     padding-right: var(--grid__gutter--half);
   }
-  
+
   .ie & {
     padding-left: var(--grid__gutter--half);
     padding-right: var(--grid__gutter--half);
@@ -68,13 +68,13 @@
 // make-column mixin
 @mixin make-col($columns) {
   @include column-floating();
-  
+
   grid-column: span $columns / span $columns;
-  
+
   @supports not (display: grid) {
     width: percentage($columns/$grid__columns);
   }
-  
+
   .ie & {
     width: percentage($columns/$grid__columns);
   }
@@ -84,20 +84,20 @@
 // [1] fallback for browser that can't calculate
 @mixin make-width($width, $align: auto) {
   $width-percentage: $width / $grid__columns * $wrapper-max;
-  
+
   max-width: $width-percentage; //[1]
   max-width: calc(#{$width-percentage} - var(--grid__gutter));
-  
+
   @if $align == auto or center {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   @if $align == left {
     margin-left: 0;
     margin-right: auto;
   }
-  
+
   @if $align == right {
     margin-right: 0;
     margin-left: auto;
@@ -126,7 +126,7 @@
 }
 
 
-// Functions 
+// Functions
 // function map-deep-get()
 // function to get a value from a nested map, see _type.scss for usage
 //
