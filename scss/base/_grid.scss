@@ -14,7 +14,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(var(--grid__columns), minmax(0, 1fr));
-  grid-column-gap: var(--grid__gutter);
+  gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
 
   @supports not (display: grid) {
