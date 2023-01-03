@@ -22,7 +22,7 @@
 //     render text using sub-pixel anti-aliasing.
 html {
   font-family: var(--base-font-family, sans-serif);
-  font-size: var(--base-font-size--xs); // [1]
+  font-size: var(--base-font-size-xs); // [1]
   line-height: var(--base-line-height); //[1]
   font-weight: var(--base-font-weight);
   background-color: var(--color-page-background);
@@ -35,7 +35,7 @@ html {
   -webkit-font-smoothing: antialiased; // [6]
 
   @include media-query(screen-sm) {
-    font-size: var(--base-font-size--sm, var(--base-font-size));
+    font-size: var(--base-font-size-sm, var(--base-font-size));
   }
 
   @include media-query(screen-md) {
@@ -43,10 +43,10 @@ html {
   }
 
   @include media-query(screen-lg) {
-    font-size: var(--base-font-size--lg, var(--base-font-size));
+    font-size: var(--base-font-size-lg, var(--base-font-size));
   }
 
   @include media-query(screen-xl) {
-    font-size: var(--base-font-size--xl);
+    font-size: var(--base-font-size-xl);
   }
 }

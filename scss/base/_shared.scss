@@ -14,7 +14,7 @@
 // [1] call every headline element (h1-h6)
 #{headings()} { // [1]
   margin-top: 0;
-  margin-bottom: var(--base-spacing-unit--sm);
+  margin-bottom: var(--base-spacing-unit-sm);
 }
 
 ul, ol, dl,

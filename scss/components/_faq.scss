@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -14,79 +14,79 @@
 // [2] headline for FE-Module
 .faq-list {
   @include navigation();
-  
+
   > ul {
     margin-top: 2rem;
   }
-  
+
   li {
-    margin-bottom: var(--base-spacing-unit--sm);
+    margin-bottom: var(--base-spacing-unit-sm);
   }
 
   li a {
     display: inline-block;
   }
-  
-  > { 
+
+  > {
     #{headings()} { // [1]
       margin-bottom: 0;
-      
+
       &:after {
         border-top: var(--faq-border);
         content: "";
-        display: block; 
+        display: block;
       }
     }
   }
-  
+
   article > {
     #{headings()} { // [1]
       margin-bottom: 0;
-    
+
       &:after {
         border-top: var(--faq-border);
         content: "";
-        display: block; 
+        display: block;
       }
     }
   }
 }
 
 .faq-page {
-  > { 
+  > {
     #{headings()} { // [1]
       margin-bottom: 0;
-      
+
       &:after {
         border-top: var(--faq-border);
         content: "";
-        display: block; 
+        display: block;
       }
     }
   }
-  
+
   article > {
     #{headings()} { // [1]
       margin-bottom: 0;
-    
+
       &:after {
         border-top: var(--faq-border);
         content: "";
-        display: block; 
+        display: block;
       }
     }
   }
-  
+
   .info {
-    font-size: 0.875rem;    
+    font-size: 0.875rem;
     margin-top: var(--base-spacing-unit);
     opacity: 0.5;
   }
-  
+
   section {
     padding: var(--base-spacing-unit) 0;
     border-bottom: var(--faq-border);
-    
+
     &.last {
       margin-bottom: var(--base-spacing-unit);
     }
@@ -98,8 +98,8 @@
 .faq-reader {
   .info {
     font-size: 0.875rem;
-   
-    margin-top: var(--base-spacing-unit);    
+
+    margin-top: var(--base-spacing-unit);
     opacity: 0.5;
-  } 
+  }
 }

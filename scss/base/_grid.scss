@@ -42,13 +42,13 @@
   max-width: 100%;
 
   @supports not(display: grid) {
-    padding-left: var(--grid-gutter--half);
-    padding-right: var(--grid-gutter--half);
+    padding-left: var(--grid-gutter-half);
+    padding-right: var(--grid-gutter-half);
   }
 
   .ie & {
-    padding-left: var(--grid-gutter--half);
-    padding-right: var(--grid-gutter--half);
+    padding-left: var(--grid-gutter-half);
+    padding-right: var(--grid-gutter-half);
   }
 }
 

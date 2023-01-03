@@ -90,7 +90,7 @@ div.btn--right {
 
 .btn--floated {
   float: left;
-  margin-right: var(--base-spacing-unit--xs);
+  margin-right: var(--base-spacing-unit-xs);
 }
 
 .ce_toplink a,
@@ -108,7 +108,7 @@ div.btn--right {
 .back {
   border-top: var(--base-border);
   margin-top: var(--base-spacing-unit);
-  padding-top: var(--base-spacing-unit--sm);
+  padding-top: var(--base-spacing-unit-sm);
 
   a {
     text-decoration: none;

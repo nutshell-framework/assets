@@ -63,7 +63,7 @@
   @include navigation();
 
   .year {
-    margin-bottom: var(--base-spacing-unit--sm);
+    margin-bottom: var(--base-spacing-unit-sm);
 
      > a,
      > .active {
@@ -74,6 +74,6 @@
   }
 
   .level_2 li {
-    margin-bottom: var(--base-spacing-unit--xs);
+    margin-bottom: var(--base-spacing-unit-xs);
   }
 }

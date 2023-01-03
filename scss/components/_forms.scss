@@ -36,7 +36,7 @@ fieldset {
 label {
   display: inline-block;
   max-width: 100%; // [3]
-  margin-bottom: var(--base-spacing-unit--xs);
+  margin-bottom: var(--base-spacing-unit-xs);
 }
 
 input.text,
@@ -45,7 +45,7 @@ textarea.textarea,
 select.select {
   display: block;
   width: 100%;
-  padding: var(--base-spacing-unit--sm) var(--base-spacing-unit--sm);
+  padding: var(--base-spacing-unit-sm) var(--base-spacing-unit-sm);
   border-radius: var(--input-border-radius);
   border: var(--input-border-width) solid var(--input-border-color);
   background-clip: padding-box; // [4]
@@ -88,12 +88,12 @@ input[type="file"] {
 input.radio,
 input.checkbox {
   margin-left: 1px; // [8]
-  margin-right: var(--base-spacing-unit--xs);
+  margin-right: var(--base-spacing-unit-xs);
   line-height: var(--base-line-height);
   vertical-align: middle;
 
   + label {
-    margin-right: var(--base-spacing-unit--xs); // [11]
+    margin-right: var(--base-spacing-unit-xs); // [11]
     margin-bottom: 0;
     font-weight: normal;
   }

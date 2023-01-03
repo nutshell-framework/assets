@@ -23,9 +23,9 @@
   }
 }
 
-@mixin padding-default($column-gutter--half: var(--grid-gutter--half)) {
-  padding-left:  $column-gutter--half;
-  padding-right: $column-gutter--half;
+@mixin padding-default($column-gutter-half: var(--grid-gutter-half)) {
+  padding-left:  $column-gutter-half;
+  padding-right: $column-gutter-half;
 }
 
 // make-row
@@ -55,13 +55,13 @@
   grid-column: 1 / -1;
 
   @supports not(display: grid) {
-    padding-left: var(--grid-gutter--half);
-    padding-right: var(--grid-gutter--half);
+    padding-left: var(--grid-gutter-half);
+    padding-right: var(--grid-gutter-half);
   }
 
   .ie & {
-    padding-left: var(--grid-gutter--half);
-    padding-right: var(--grid-gutter--half);
+    padding-left: var(--grid-gutter-half);
+    padding-right: var(--grid-gutter-half);
   }
 }
 
