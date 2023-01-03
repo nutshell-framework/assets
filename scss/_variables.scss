@@ -48,14 +48,21 @@ html {
   // --------------------------------------------------
 
   // BASE/GRID
-  --grid__columns:       12;
-  --grid__gutter:        1.875rem; // 30px
-  --grid__gutter--half:  calc(var(--grid__gutter) / 2);
+  --grid-columns:       12;
+  --grid-gutter:        1.875rem; // 30px
+  --grid-gutter--half:  calc(var(--grid-gutter) / 2);
   // --------------------------------------------------
 
   // BASE/LAYOUT
   --header-color-background:   var(--color-page-background);
   --header-color-text:         var(--color-text);
+  // --------------------------------------------------
+
+  // BASE/ARTICLE
+  --article-spacing-left: var(--grid-gutter--half);
+  --article-spacing-right: var(--grid-gutter--half);
+  --article-spacing-top: var(--base-spacing-unit);
+  --article-spacing-bottom: var(--base-spacing-unit);
   // --------------------------------------------------
 
   // BASE/TYPE
@@ -130,38 +137,40 @@ html {
   --h6-spacing-top: 0;
   --h6-spacing-bottom: 0.5rem;
 
-  --paragraph__link-color: var(--color-links);
-  --code__color: var(--color-highlight);
-  --selection-background: var(--color-brand);
-  --pre__color-background: var(--color-gray);
-  --pre__color: var(--color-text--inverted);
-  --selection-color: var(--color-text--inverted);
-  --hr-border: var(--base-border);
-  --paragraph__link-decoration: underline;
-  --paragraph__link-decoration--hover: none;
+  --paragraph-link-color:             var(--links-color);
+  --code-color:                       var(--color-highlight);
+  --selection-background:             var(--color-brand);
+  --pre-color-background:             var(--color-gray);
+  --pre-color:                        var(--color-text--inverted);
+  --selection-color:                  var(--color-text--inverted);
+  --hr-border:                        var(--base-border);
+  --paragraph-link-decoration:        underline;
+  --paragraph-link-decoration--hover: none;
   // --------------------------------------------------
 
   // COMPONENTS/MEDIA
-  --gallery__gutter: var(--grid__gutter);
-  --gallery__gutter--half: calc(var(--gallery__gutter) / 2);
+  --gallery-gutter:      var(--grid-gutter);
+  --gallery-gutter-half: calc(var(--gallery-gutter) / 2);
   // --------------------------------------------------
 
   // COMPONENTS/LINKS
-  --color-links:           var(--color-highlight);
-  --color-btn:             var(--color-links);
-  --color-btn-text:        var(--color-text--inverted);
-  --button-bg:             var(--color-btn);
-  --button-bg-hover:       var(--color-btn);
-  --button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
-  --button-border-radius:  var(--base-border-radius);
-  --button-border-width:   var(--base-border-width);
-  --button-font-family:    var(--base-font-family);
-  --button-font-weight:    400;
-  --button-line-height:    var(--base-line-height);
+  --links-color:       var(--color-highlight);
+  --links-color-hover: var(--color-highlight);
+
+  --button-color:            var(--color-text--inverted);
+  --button-background:       var(--color-highlight);
+  --button-background-hover: var(--color-highlight);
+  --button-spacing:          var(--base-spacing-unit--sm) var(--base-spacing-unit);
+  --button-border-radius:    var(--base-border-radius);
+  --button-border-width:     var(--base-border-width);
+  --button-font-family:      var(--base-font-family);
+  --button-font-weight:      400;
+  --button-line-height:      var(--base-line-height);
   // --------------------------------------------------
 
   // COMPONENTS/NAVS
-  --nav--main__item-padding: var(--base-spacing-unit);
+  --nav-main-item-padding: var(--base-spacing-unit);
+
   --nav-toggler-top-space:   var(--base-spacing-unit--sm);
   --nav-toggler-right-space: var(--base-spacing-unit--sm);
   --nav-toggler-border:      var(--base-border-width) solid currentColor;
@@ -189,7 +198,7 @@ html {
   --input-border-radius:   var(--base-border-radius);
   --input-border-color:    rgba(0,0,0,0.25);
   --input-line-height:     normal;
-  --mandatory--color: var(--color-brand);
+  --mandatory--color:      var(--color-brand);
   // --------------------------------------------------
 
   // COMPONENTS/ACCORDION

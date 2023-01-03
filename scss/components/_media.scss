@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -28,67 +28,67 @@
 
 .ce_gallery {
   margin-bottom: var(--base-spacing-unit);
-  
-  > ul {  
+
+  > ul {
     @include make-row();
-    
-    grid-row-gap: var(--grid__gutter);
-    
+
+    grid-row-gap: var(--gallery-gutter);
+
     padding: 0;
     margin: 0;
     list-style-type: none;
-  
-    li {    
+
+    li {
       @extend %column-floating;
     }
   }
-  
+
   .cols_2 {
     li {
       @include make-col(6);
     }
   }
-  
+
   .cols_3 {
     li {
       @include make-col(6);
-      
+
       @include media-query(screen-md) {
         @include make-col(4);
       }
     }
   }
-  
+
   .cols_4 {
     li {
       @include make-col(6);
-      
+
       @include media-query(screen-md) {
         @include make-col(3);
       }
     }
   }
-  
+
   .cols_5 {
     li {
       @include make-col(6);
-      
+
       @include media-query(screen-md) {
         @include make-col(2);
       }
     }
   }
-  
+
   .cols_6 {
     li {
       @include make-col(6);
-      
+
       @include media-query(screen-md) {
         @include make-col(2);
       }
     }
   }
-  
+
   img {
     display: block;
   }

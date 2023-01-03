@@ -9,9 +9,10 @@
 //
 // CONFIG
 // --------------------------------------------------
+$config-loaded: true;
 
 // MIXINS/GENERAL
-$grid__columns: 12 !default;
+$grid-columns: 12 !default;
 // ----------------------------------------------------
 
 // MIXINS/RESPONSIVE

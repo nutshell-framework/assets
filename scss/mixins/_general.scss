@@ -23,30 +23,30 @@
   }
 }
 
-@mixin padding-default($column__gutter--half: var(--grid__gutter--half)) {
-  padding-left:  $column__gutter--half;
-  padding-right: $column__gutter--half;
+@mixin padding-default($column-gutter--half: var(--grid-gutter--half)) {
+  padding-left:  $column-gutter--half;
+  padding-right: $column-gutter--half;
 }
 
 // make-row
-@mixin make-row($total__columns: $grid__columns, $grid__gutter: var(--grid__gutter)) {
+@mixin make-row($total-columns: $grid-columns, $grid-gutter: var(--grid-gutter)) {
   display: grid;
-  grid-template-columns: repeat($total__columns, 1fr);
-  grid-column-gap: $grid__gutter;
+  grid-template-columns: repeat($total-columns, 1fr);
+  grid-column-gap: $grid-gutter;
   grid-auto-columns: 1fr;
 
   @supports not (display: grid) {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(-1 * var(--grid__gutter) / 2);
-    margin-right: calc(-1 * var(--grid__gutter) / 2);
+    margin-left: calc(-1 * var(--grid-gutter) / 2);
+    margin-right: calc(-1 * var(--grid-gutter) / 2);
   }
 
   .ie & {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(-1 * var(--grid__gutter) / 2);
-    margin-right: calc(-1 * var(--grid__gutter) / 2);
+    margin-left: calc(-1 * var(--grid-gutter) / 2);
+    margin-right: calc(-1 * var(--grid-gutter) / 2);
   }
 }
 
@@ -55,13 +55,13 @@
   grid-column: 1 / -1;
 
   @supports not(display: grid) {
-    padding-left: var(--grid__gutter--half);
-    padding-right: var(--grid__gutter--half);
+    padding-left: var(--grid-gutter--half);
+    padding-right: var(--grid-gutter--half);
   }
 
   .ie & {
-    padding-left: var(--grid__gutter--half);
-    padding-right: var(--grid__gutter--half);
+    padding-left: var(--grid-gutter--half);
+    padding-right: var(--grid-gutter--half);
   }
 }
 
@@ -72,21 +72,21 @@
   grid-column: span $columns / span $columns;
 
   @supports not (display: grid) {
-    width: percentage($columns/$grid__columns);
+    width: percentage($columns/$grid-columns);
   }
 
   .ie & {
-    width: percentage($columns/$grid__columns);
+    width: percentage($columns/$grid-columns);
   }
 }
 
 // make-width mixin
 // [1] fallback for browser that can't calculate
 @mixin make-width($width, $align: auto) {
-  $width-percentage: $width / $grid__columns * $wrapper-max;
+  $width-percentage: $width / $grid-columns * $wrapper-max;
 
   max-width: $width-percentage; //[1]
-  max-width: calc(#{$width-percentage} - var(--grid__gutter));
+  max-width: calc(#{$width-percentage} - var(--grid-gutter));
 
   @if $align == auto or center {
     margin-left: auto;
