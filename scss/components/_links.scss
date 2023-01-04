@@ -28,11 +28,12 @@
 }
 
 %button--primary {
-  background: var(--button-bg);
-  color: var(--color-btn-text);
+  background: var(--button-background);
+  color: var(--button-color);
 
   &:hover {
-    background: var(--button-bg-hover);
+    background: var(--button-background-hover);
+    color: var(--button-color-hover);
   }
 }
 

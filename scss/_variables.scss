@@ -159,6 +159,7 @@ html {
 
   --button-color:            var(--color-text-inverted);
   --button-background:       var(--color-highlight);
+  --button-color-hover:      var(--button-color);
   --button-background-hover: var(--color-highlight);
   --button-spacing:          var(--base-spacing-unit-sm) var(--base-spacing-unit);
   --button-border-radius:    var(--base-border-radius);
