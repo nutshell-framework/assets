@@ -186,12 +186,15 @@ html {
   --news-grid-columns-md: 2;
   --news-grid-columns-lg: 3;
   --news-grid-columns-xl: 3;
-// ----------------------------------------------------
+
   --news-border: var(--base-border);
   // --------------------------------------------------
 
   // COMPONENTS/EVENTS
-  --event-border: var(--base-border);
+  --events-grid-columns-sm: 1;
+  --events-grid-columns-md: 2;
+  --events-grid-columns-lg: 3;
+  --events-grid-columns-xl: 3;
   // --------------------------------------------------
 
   // COMPONENTS/FORMS

@@ -57,6 +57,28 @@
   }
 }
 
+.events-grid {
+  display: grid;
+  grid-gap: var(--grid-gutter);
+  margin-bottom: var(--base-spacing-unit);
+
+  @include media-query(screen-sm) {
+    grid-template-columns: repeat(var(--events-grid-columns-sm), 1fr);
+  }
+
+  @include media-query(screen-md) {
+    grid-template-columns: repeat(var(--events-grid-columns-md), 1fr);
+  }
+
+  @include media-query(screen-lg) {
+    grid-template-columns: repeat(var(--events-grid-columns-lg), 1fr);
+  }
+
+  @include media-query(screen-xl) {
+    grid-template-columns: repeat(var(--events-grid-columns-xl), 1fr);
+  }
+}
+
 
 // [2] add border-top to the first element after headline
 .events-menu {
