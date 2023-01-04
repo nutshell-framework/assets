@@ -45,10 +45,12 @@ button.btn {
   margin-bottom: var(--base-spacing-unit);
 }
 
-a.btn--primary,
-span.btn--primary,
-button.btn--primary {
-  @extend %button--primary;
+a,
+span,
+button {
+  &.btn--primary {
+    @extend %button--primary;
+  }
 }
 
 // [1] add margin, when there is another element following
