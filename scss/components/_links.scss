@@ -32,8 +32,8 @@
   color: var(--button-color);
 
   &:hover {
-    background: var(--button-background-hover);
-    color: var(--button-color-hover);
+    --button-background: var(--button-background-hover);
+    --button-color: var(--button-color-hover);
   }
 }
 
