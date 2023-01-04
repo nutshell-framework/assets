@@ -59,8 +59,7 @@ html {
   // --------------------------------------------------
 
   // BASE/ARTICLE
-  --article-spacing-left: var(--grid-gutter-half);
-  --article-spacing-right: var(--grid-gutter-half);
+  --article-spacing-sides: var(--grid-gutter-half);
   --article-spacing-top: var(--base-spacing-unit);
   --article-spacing-bottom: var(--base-spacing-unit);
   // --------------------------------------------------

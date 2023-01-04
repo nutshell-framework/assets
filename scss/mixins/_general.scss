@@ -19,13 +19,13 @@
   }
 
   a {
-	  text-decoration: none;
+    text-decoration: none;
   }
 }
 
-@mixin padding-default($column-gutter-half: var(--grid-gutter-half)) {
-  padding-left:  $column-gutter-half;
-  padding-right: $column-gutter-half;
+@mixin padding-default($padding: var(--base-spacing-unit)) {
+  padding-left:  $padding;
+  padding-right: $padding;
 }
 
 // make-row
