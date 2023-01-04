@@ -28,13 +28,13 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    font-size: var(--arrow-size);
+    font-size: var(--slider-arrow-size);
     line-height: 1;
 
     position: absolute;
     display: block;
-    color: var(--arrow-color);
-    font-family: var(--arrow-font-family);
+    color: var(--slider-arrow-color);
+    font-family: var(--slider-arrow-font-family);
 
     &:before {
       padding: var(--base-spacing-unit-sm);
@@ -55,18 +55,18 @@
   }
 
   .slider-menu {
-    font-size: var(--menu-point-size);
+    font-size: var(--slider-menu-point-size);
     line-height: 1;
 
     top: auto; // [2]
     bottom: 0; // [2]
 
     b {
-      color: var(--menu-point-color); // [2]
+      color: var(--slider-menu-point-color); // [2]
     }
 
     b.active {
-      color: var(--menu-point-color-active); // [2]
+      color: var(--slider-menu-point-color-active); // [2]
     }
 
     b:hover {
