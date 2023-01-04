@@ -88,12 +88,6 @@
     }
   }
 
-  .layout_short,
-  .layout_latest,
-  .layout_simple {
-    @include column-floating;
-  }
-
   .layout_simple {
     time {
       display: block;
