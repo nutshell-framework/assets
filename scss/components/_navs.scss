@@ -30,7 +30,7 @@
   strong.trail,
   strong.forward  {
     display: block;
-    padding: calc(var(--nav-main-item-padding) / 2) var(--nav-main-item-padding);
+    padding: calc(var(--nav-item-padding) / 2) var(--nav-item-padding);
   }
 }
 
@@ -40,7 +40,7 @@
   strong.trail,
   strong.forward  {
     display: block;
-    padding: calc(var(--nav-main-item-padding) / 2) var(--nav-main-item-padding);
+    padding: calc(var(--nav-item-padding) / 2) var(--nav-item-padding);
   }
 }
 
@@ -51,7 +51,7 @@
   strong.active,
   strong.trail,
   strong.forward {
-    padding: var(--nav-main-item-padding) var(--nav-main-item-padding);
+    padding: var(--nav-item-padding) var(--nav-item-padding);
     border-bottom: 1px solid var(--base-border-color);
 
 
@@ -120,12 +120,12 @@
 }
 
 .pagination {
-	@include navigation;
+  @include navigation;
 
-	display: grid;
+  display: grid;
   grid-column: 1 / -1;
   margin-top: var(--base-spacing-unit);
-	text-align: center;
+  text-align: center;
   line-height: 1;
 
   @supports not (display: grid) {
@@ -139,41 +139,41 @@
     grid-template-columns: 1fr 1fr;
   }
 
-	p {
+  p {
     padding: var(--base-spacing-unit-xs);
     padding-left: 0;
-		margin: var(--base-spacing-unit-xs);
-		margin-left: 0;
-		border-top: var(--base-border-width) solid transparent;
-	}
+    margin: var(--base-spacing-unit-xs);
+    margin-left: 0;
+    border-top: var(--base-border-width) solid transparent;
+  }
 
-	li {
-		display: inline;
-	}
+  li {
+    display: inline;
+  }
 
-	a,
-	strong {
-  	display: inline-block;
-		padding: var(--base-spacing-unit-xs);
-		margin: var(--base-spacing-unit-xs);
-	}
+  a,
+  strong {
+    display: inline-block;
+    padding: var(--base-spacing-unit-xs);
+    margin: var(--base-spacing-unit-xs);
+  }
 
-	strong {
-  	border: var(--base-border);
-	}
+  strong {
+    border: var(--base-border);
+  }
 
-	a.next {
-  	margin-right: 0;
-  	padding-right: 0;
-	}
+  a.next {
+    margin-right: 0;
+    padding-right: 0;
+  }
 
-	@include media-query(screen-sm) {
-  	p {
-  		justify-self: start;
-  	}
+  @include media-query(screen-sm) {
+    p {
+      justify-self: start;
+    }
 
-  	p + ul {
-  		justify-self: end;
-  	}
-	}
+    p + ul {
+      justify-self: end;
+    }
+  }
 }
