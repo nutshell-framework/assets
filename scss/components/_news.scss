@@ -86,6 +86,10 @@
     @include media-query(screen-lg) {
       @include make-col((12 / $news-grid-columns-lg));
     }
+
+    @include media-query(screen-xl) {
+      @include make-col((12 / $news-grid-columns-xl));
+    }
   }
 
   .layout_simple {
