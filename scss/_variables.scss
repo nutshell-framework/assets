@@ -12,17 +12,17 @@
 
 html {
   // GENERAL/COLORS
-  --color-default:            #ff5636;
-  --color-gray-dark:          #222;
-  --color-gray:               #555;
-  --color-gray-light:         #ccc;
-  --color-brand:              var(--color-default);
-  --color-highlight:          var(--color-brand);
-  --color-page-background:    #fff;
-  --color-text:               var(--color-gray-dark);
-  --color-text-inverted:      var(--color-page-background);
-  --color-error:              rgba(255, 0, 0, 1);
-  --color-error-light:        rgba(255, 0, 0, 0.5);
+  --color-default:         #ff5636;
+  --color-gray-dark:       #222;
+  --color-gray:            #555;
+  --color-gray-light:      #ccc;
+  --color-brand:           var(--color-default);
+  --color-highlight:       var(--color-brand);
+  --color-page-background: #fff;
+  --color-text:            var(--color-gray-dark);
+  --color-text-inverted:   var(--color-page-background);
+  --color-error:           rgba(255, 0, 0, 1);
+  --color-error-light:     rgba(255, 0, 0, 0.5);
   // --------------------------------------------------
 
   // GENERAL/FONTS
@@ -138,15 +138,15 @@ html {
   --h6-spacing-top:    0;
   --h6-spacing-bottom: 0.5rem;
 
-  --paragraph-link-color:             var(--links-color);
-  --paragraph-link-decoration:        underline;
-  --paragraph-link-decoration-hover:  none;
-  --code-color:                       var(--color-highlight);
-  --selection-background:             var(--color-brand);
-  --pre-color-background:             var(--color-gray);
-  --pre-color:                        var(--color-text-inverted);
-  --selection-color:                  var(--color-text-inverted);
-  --hr-border:                        var(--base-border);
+  --paragraph-link-color:            var(--links-color);
+  --paragraph-link-decoration:       underline;
+  --paragraph-link-decoration-hover: none;
+  --code-color:                      var(--color-highlight);
+  --selection-background:            var(--color-brand);
+  --pre-color-background:            var(--color-gray);
+  --pre-color:                       var(--color-text-inverted);
+  --selection-color:                 var(--color-text-inverted);
+  --hr-border:                       var(--base-border);
   // --------------------------------------------------
 
   // COMPONENTS/MEDIA
@@ -220,7 +220,7 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/DOWNLOADS
-  --download-link-color:   inherit;
+  --download-link-color:      inherit;
   --download-link-decoration: none;
   // --------------------------------------------------
 
