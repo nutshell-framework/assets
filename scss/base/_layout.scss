@@ -10,10 +10,23 @@
 // BASE/LAYOUT
 // --------------------------------------------------
 
+// #wrapper
+// [1] full height layout with css grid layout
+// [2] prevent width calculation when using sliders
+[id='wrapper'] {
+  min-height: 100vh; // [1]
+  display: grid; // [1]
+  grid-template-rows: min-content auto min-content; // [1]
+  grid-template-columns: 100%; // [2]
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--layout-wrapper-background);
+}
+
 // #header
 [id="header"] {
-  background: var(--header-color-background);
-  color: var(--header-color-text);
+  background: var(--layout-header-background);
+  color: var(--layout-header-color);
 
   > .inside {
     @include wrapper-max;
@@ -23,6 +36,9 @@
 
 // #footer
 [id="footer"] {
+  background: var(--layout-footer-background);
+  color: var(--layout-footer-color);
+
   > .inside {
     @include wrapper-max;
     @include padding-default;

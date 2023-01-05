@@ -56,8 +56,11 @@ html {
   // --------------------------------------------------
 
   // BASE/LAYOUT
-  --header-color-background: var(--color-page-background);
-  --header-color-text:       var(--color-text);
+  --layout-wrapper-background: transparent;
+  --layout-header-background:  var(--color-page-background);
+  --layout-header-color:       var(--color-text);
+  --layout-footer-background:  transparent;
+  --layout-footer-color:       var(--color-text);
   // --------------------------------------------------
 
   // BASE/ARTICLE
