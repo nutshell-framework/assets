@@ -206,14 +206,14 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/ACCORDION
-  --accordion-padding:       var(--base-spacing-unit-sm);
-  --accordion-background:    var(--color-gray-light);
-  --toggler-font-size:       1.5rem;
-  --toggler-background:      var(--color-highlight);
-  --toggler-color:           var(--color-text-inverted);
-  --toggler-color-hover:     var(--color-brand-primary);
-  --toggler-spacing:         var(--base-spacing-unit-xs);
-  --toggler-border:          2px solid transparent;
+  --accordion-content-spacing:     var(--base-spacing-unit-sm);
+  --accordion-content-background:  var(--color-gray-light);
+  --accordion-toggler-font-size:   1.5rem;
+  --accordion-toggler-background:  var(--color-highlight);
+  --accordion-toggler-color:       var(--color-text-inverted);
+  --accordion-toggler-color-hover: var(--color-brand-primary);
+  --accordion-toggler-spacing:     var(--base-spacing-unit-xs);
+  --accordion-toggler-border:      2px solid transparent;
   // --------------------------------------------------
 
   // COMPONENTS/DOWNLOADS
