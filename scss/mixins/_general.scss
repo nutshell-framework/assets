@@ -41,13 +41,6 @@
     margin-left: calc(-1 * var(--grid-gutter) / 2);
     margin-right: calc(-1 * var(--grid-gutter) / 2);
   }
-
-  .ie & {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--grid-gutter) / 2);
-    margin-right: calc(-1 * var(--grid-gutter) / 2);
-  }
 }
 
 // column-floating
@@ -55,11 +48,6 @@
   grid-column: 1 / -1;
 
   @supports not(display: grid) {
-    padding-left: var(--grid-gutter-half);
-    padding-right: var(--grid-gutter-half);
-  }
-
-  .ie & {
     padding-left: var(--grid-gutter-half);
     padding-right: var(--grid-gutter-half);
   }
@@ -72,10 +60,6 @@
   grid-column: span $columns / span $columns;
 
   @supports not (display: grid) {
-    width: percentage($columns/$grid-columns);
-  }
-
-  .ie & {
     width: percentage($columns/$grid-columns);
   }
 }
