@@ -208,6 +208,7 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/ACCORDION
+  --accordion-spacing:             var(--base-spacing-unit);
   --accordion-content-spacing:     var(--base-spacing-unit-sm);
   --accordion-content-background:  var(--color-gray-light);
   --accordion-toggler-font-size:   1.5rem;
