@@ -46,11 +46,11 @@ select.select {
   display: block;
   width: 100%;
   padding: var(--base-spacing-unit-sm) var(--base-spacing-unit-sm);
-  border-radius: var(--input-border-radius);
-  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--forms-input-border-radius);
+  border: var(--forms-input-border-width) solid var(--forms-input-border-color);
   background-clip: padding-box; // [4]
   background-image: none; // [7]
-  line-height: var(--input-line-height);
+  line-height: var(--forms-input-line-height);
 }
 
 @if($set-select-height==true) {
@@ -121,7 +121,7 @@ input.checkbox {
 // Mandatory & Error-Styling
 // asterisk at mandatory fields
 span.mandatory {
-  color: var(--mandatory-color);
+  color: var(--forms-mandatory-color);
 }
 
 // error-text

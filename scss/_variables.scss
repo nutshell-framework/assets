@@ -20,131 +20,133 @@ html {
   --color-highlight:          var(--color-brand);
   --color-page-background:    #fff;
   --color-text:               var(--color-gray-dark);
-  --color-text-inverted:     var(--color-page-background);
+  --color-text-inverted:      var(--color-page-background);
+  --color-error:              rgba(255, 0, 0, 1);
+  --color-error-light:        rgba(255, 0, 0, 0.5);
   // --------------------------------------------------
 
   // GENERAL/FONTS
-  --base-font-size-xs:       0.875rem;
-  --base-font-size:           1rem;
-  --base-font-size-xl:       1.125rem;
-  --base-line-height:         1.625;
-  --base-font-weight:         400;
-  --base-font-family:         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  --base-font-size-xs: 0.875rem;
+  --base-font-size:    1rem;
+  --base-font-size-xl: 1.125rem;
+  --base-line-height:  1.625;
+  --base-font-weight:  400;
+  --base-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   // --------------------------------------------------
 
   // GENERAL/BASE SPACING UNITS
-  --base-spacing-unit: 1rem;
-  --base-spacing-unit-xs:    calc(var(--base-spacing-unit) / 4);
-  --base-spacing-unit-sm:    calc(var(--base-spacing-unit) / 2);
-  --base-spacing-unit-lg:    calc(var(--base-spacing-unit) * 2);
-  --base-spacing-unit-xl:    calc(var(--base-spacing-unit) * 4);
+  --base-spacing-unit:    1rem;
+  --base-spacing-unit-xs: calc(var(--base-spacing-unit) / 4);
+  --base-spacing-unit-sm: calc(var(--base-spacing-unit) / 2);
+  --base-spacing-unit-lg: calc(var(--base-spacing-unit) * 2);
+  --base-spacing-unit-xl: calc(var(--base-spacing-unit) * 4);
   // --------------------------------------------------
 
   // GENERAL/BORDER
-  --base-border-radius:       4px;
-  --base-border-width:        1px;
-  --base-border-color:        var(--color-gray-light);
-  --base-border:              var(--base-border-width) solid var(--base-border-color);
+  --base-border-radius: 4px;
+  --base-border-width:  1px;
+  --base-border-color:  var(--color-gray-light);
+  --base-border:        var(--base-border-width) solid var(--base-border-color);
   // --------------------------------------------------
 
   // BASE/GRID
-  --grid-columns:       12;
-  --grid-gutter:        1.875rem; // 30px
-  --grid-gutter-half:  calc(var(--grid-gutter) / 2);
+  --grid-columns:     12;
+  --grid-gutter:      1.875rem; // 30px
+  --grid-gutter-half: calc(var(--grid-gutter) / 2);
   // --------------------------------------------------
 
   // BASE/LAYOUT
-  --header-color-background:   var(--color-page-background);
-  --header-color-text:         var(--color-text);
+  --header-color-background: var(--color-page-background);
+  --header-color-text:       var(--color-text);
   // --------------------------------------------------
 
   // BASE/ARTICLE
-  --article-spacing-sides: var(--grid-gutter-half);
-  --article-spacing-top: var(--base-spacing-unit);
+  --article-spacing-sides:  var(--grid-gutter-half);
+  --article-spacing-top:    var(--base-spacing-unit);
   --article-spacing-bottom: var(--base-spacing-unit);
   // --------------------------------------------------
 
   // BASE/TYPE
   --headings-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   --headings-font-weight: 700;
-  --headings-color: 'currentColor';
+  --headings-color:       'currentColor';
 
-  --h1-font-family: var(--headings-font-family);
-  --h1-font-weight: var(--headings-font-weight);
-  --h1-color: var(--headings-color);
-  --h1-font-size:    2.0rem;
-  --h1-font-size-sm: 2.0rem;
-  --h1-font-size-md: 2.25rem;
-  --h1-font-size-lg: 2.25rem;
-  --h1-font-size-xl: 2.25rem;
-  --h1-line-height: 1.55;
-  --h1-spacing-top: 0;
+  --h1-font-family:    var(--headings-font-family);
+  --h1-font-weight:    var(--headings-font-weight);
+  --h1-color:          var(--headings-color);
+  --h1-font-size:      2.0rem;
+  --h1-font-size-sm:   2.0rem;
+  --h1-font-size-md:   2.25rem;
+  --h1-font-size-lg:   2.25rem;
+  --h1-font-size-xl:   2.25rem;
+  --h1-line-height:    1.55;
+  --h1-spacing-top:    0;
   --h1-spacing-bottom: 0.5rem;
-  --h2-font-family: var(--headings-font-family);
-  --h2-font-weight: var(--headings-font-weight);
-  --h2-color: var(--headings-color);
-  --h2-font-size:    1.625rem;
-  --h2-font-size-sm: 1.625rem;
-  --h2-font-size-md: 1.75rem;
-  --h2-font-size-lg: 1.75rem;
-  --h2-font-size-xl: 1.75rem;
-  --h2-line-height: 1.5;
-  --h2-spacing-top: 0;
+  --h2-font-family:    var(--headings-font-family);
+  --h2-font-weight:    var(--headings-font-weight);
+  --h2-color:          var(--headings-color);
+  --h2-font-size:      1.625rem;
+  --h2-font-size-sm:   1.625rem;
+  --h2-font-size-md:   1.75rem;
+  --h2-font-size-lg:   1.75rem;
+  --h2-font-size-xl:   1.75rem;
+  --h2-line-height:    1.5;
+  --h2-spacing-top:    0;
   --h2-spacing-bottom: 0.5rem;
-  --h3-font-family: var(--headings-font-family);
-  --h3-font-weight: var(--headings-font-weight);
-  --h3-color: var(--headings-color);
-  --h3-font-size:    1.375rem;
-  --h3-font-size-sm: 1.375rem;
-  --h3-font-size-md: 1.5rem;
-  --h3-font-size-lg: 1.5rem;
-  --h3-font-size-xl: 1.5rem;
-  --h3-line-height: 1.25;
-  --h3-spacing-top: 0;
+  --h3-font-family:    var(--headings-font-family);
+  --h3-font-weight:    var(--headings-font-weight);
+  --h3-color:          var(--headings-color);
+  --h3-font-size:      1.375rem;
+  --h3-font-size-sm:   1.375rem;
+  --h3-font-size-md:   1.5rem;
+  --h3-font-size-lg:   1.5rem;
+  --h3-font-size-xl:   1.5rem;
+  --h3-line-height:    1.25;
+  --h3-spacing-top:    0;
   --h3-spacing-bottom: 0.5rem;
-  --h4-font-family: var(--headings-font-family);
-  --h4-font-weight: var(--headings-font-weight);
-  --h4-color: var(--headings-color);
-  --h4-font-size:    1.125rem;
-  --h4-font-size-sm: 1.125rem;
-  --h4-font-size-md: 1.25rem;
-  --h4-font-size-lg: 1.25rem;
-  --h4-font-size-xl: 1.25rem;
-  --h4-line-height: 1;
-  --h4-spacing-top: 0;
+  --h4-font-family:    var(--headings-font-family);
+  --h4-font-weight:    var(--headings-font-weight);
+  --h4-color:          var(--headings-color);
+  --h4-font-size:      1.125rem;
+  --h4-font-size-sm:   1.125rem;
+  --h4-font-size-md:   1.25rem;
+  --h4-font-size-lg:   1.25rem;
+  --h4-font-size-xl:   1.25rem;
+  --h4-line-height:    1;
+  --h4-spacing-top:    0;
   --h4-spacing-bottom: 0.5rem;
-  --h5-font-family: var(--headings-font-family);
-  --h5-font-weight: var(--headings-font-weight);
-  --h5-color: var(--headings-color);
-  --h5-font-size:    1rem;
-  --h5-font-size-sm: 1rem;
-  --h5-font-size-md: 1rem;
-  --h5-font-size-lg: 1rem;
-  --h5-font-size-xl: 1rem;
-  --h5-line-height: 1;
-  --h5-spacing-top: 0;
+  --h5-font-family:    var(--headings-font-family);
+  --h5-font-weight:    var(--headings-font-weight);
+  --h5-color:          var(--headings-color);
+  --h5-font-size:      1rem;
+  --h5-font-size-sm:   1rem;
+  --h5-font-size-md:   1rem;
+  --h5-font-size-lg:   1rem;
+  --h5-font-size-xl:   1rem;
+  --h5-line-height:    1;
+  --h5-spacing-top:    0;
   --h5-spacing-bottom: 0.5rem;
-  --h6-font-family: var(--headings-font-family);
-  --h6-font-weight: var(--headings-font-weight);
-  --h6-color: var(--headings-color);
-  --h6-font-size:    0.875rem;
-  --h6-font-size-sm: 0.875rem;
-  --h6-font-size-md: 0.875rem;
-  --h6-font-size-lg: 0.875rem;
-  --h6-font-size-xl: 0.875rem;
-  --h6-line-height: 1;
-  --h6-spacing-top: 0;
+  --h6-font-family:    var(--headings-font-family);
+  --h6-font-weight:    var(--headings-font-weight);
+  --h6-color:          var(--headings-color);
+  --h6-font-size:      0.875rem;
+  --h6-font-size-sm:   0.875rem;
+  --h6-font-size-md:   0.875rem;
+  --h6-font-size-lg:   0.875rem;
+  --h6-font-size-xl:   0.875rem;
+  --h6-line-height:    1;
+  --h6-spacing-top:    0;
   --h6-spacing-bottom: 0.5rem;
 
   --paragraph-link-color:             var(--links-color);
+  --paragraph-link-decoration:        underline;
+  --paragraph-link-decoration-hover:  none;
   --code-color:                       var(--color-highlight);
   --selection-background:             var(--color-brand);
   --pre-color-background:             var(--color-gray);
   --pre-color:                        var(--color-text-inverted);
   --selection-color:                  var(--color-text-inverted);
   --hr-border:                        var(--base-border);
-  --paragraph-link-decoration:        underline;
-  --paragraph-link-decoration-hover: none;
   // --------------------------------------------------
 
   // COMPONENTS/MEDIA
@@ -173,12 +175,12 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/SLIDER
-  --slider-arrow-color:               inherit;
-  --slider-arrow-size:                2rem;
-  --slider-arrow-font-family:         'Arial';
-  --slider-menu-point-size:           2rem;
-  --slider-menu-point-color:          inherit;
-  --slider-menu-point-color-active:  var(--color-brand);
+  --slider-arrow-color:             inherit;
+  --slider-arrow-size:              2rem;
+  --slider-arrow-font-family:       'Arial';
+  --slider-menu-point-size:         2rem;
+  --slider-menu-point-color:        inherit;
+  --slider-menu-point-color-active: var(--color-brand);
   // --------------------------------------------------
 
   // COMPONENTS/NEWS
@@ -198,11 +200,11 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/FORMS
-  --input-border-width:    var(--base-border-width);
-  --input-border-radius:   var(--base-border-radius);
-  --input-border-color:    rgba(0,0,0,0.25);
-  --input-line-height:     normal;
-  --mandatory-color:      var(--color-brand);
+  --forms-input-border-width:  var(--base-border-width);
+  --forms-input-border-radius: var(--base-border-radius);
+  --forms-input-border-color:  rgba(0,0,0,0.25);
+  --forms-input-line-height:   normal;
+  --forms-mandatory-color:     var(--color-brand);
   // --------------------------------------------------
 
   // COMPONENTS/ACCORDION
@@ -229,9 +231,9 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/NEWSLETTER
-  --newsletter-list-border:    var(--base-border);
-  --newsletter-reader-width:   600px;
-  --newsletter-reader-border:  var(--base-border);
+  --newsletter-list-border:   var(--base-border);
+  --newsletter-reader-width:  600px;
+  --newsletter-reader-border: var(--base-border);
   // --------------------------------------------------
 
   // COMPONENTS/FAQ
@@ -239,12 +241,11 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/COMMENTS
-  --color-error: rgba(255, 0, 0, 1);
-  --color-error-light: rgba(255, 0, 0, 0.5);
+
   // --------------------------------------------------
 
   // COMPONENTS/SEARCH
-  --search-color-relevance:  var(--color-gray);
-  --search-color-url:        var(--color-gray);
+  --search-relevance-color: var(--color-gray);
+  --search-url-color:       var(--color-gray);
   // --------------------------------------------------
 }

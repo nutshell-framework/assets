@@ -50,7 +50,7 @@
 
   // search-results
   .relevance {
-    color: var(--search-color-relevance);
+    color: var(--search-relevance-color);
   }
 
   .context {
@@ -62,6 +62,6 @@
   }
 
   .url {
-    color: var(--search-color-url);
+    color: var(--search-url-color);
   }
 }
