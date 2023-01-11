@@ -74,16 +74,15 @@
     }
 
     // If the user specifies a non-exitent alias, use variable as min-width.
-    @if $breakpoint-found == false and $mq-max == '' {
-      @media screen and (min-width: #{$mq}) {
-        @content;
+    @if ($breakpoint-found == false) {
+      @if ($mq-max == false) {
+        @media screen and (min-width: #{$mq}) {
+          @content;
+        }
+      } @else {
+        @media screen and (min-width: #{$mq}) and (max-width: #{$mq-max}) {
+          @content;
+        }
       }
     }
-
-    @if $breakpoint-found == false and $mq-max != '' {
-      @media screen and (min-width: #{$mq}) and (max-width: #{$mq-max}) {
-        @content;
-      }
-    }
-
 }
