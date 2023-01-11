@@ -3,9 +3,9 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
-  
+
 //
 // MIXINS/RESPONSIVE
 // --------------------------------------------------
@@ -26,20 +26,20 @@
 
         // Grab the alias and the condition from their respective locations in
         // the list.
-        
+
         // min-width
         $size:      $breakpoint; // (xs)
-        
+
         $alias-min:     "screen-#{$size}"; // (screen-xs)
         $alias-max:     "screen-#{$size}-max"; // (screen-xs-max)
         $condition-min: map-get($screen, min);
         $condition-max: map-get($screen, max);
-        
+
         //@warn "mq: #{$mq}";
-        
+
         //@warn "size: #{$size}, alias: #{$alias-min} - #{$alias-max}, condition: #{$condition-min} #{$condition-max}";
-        
-        
+
+
         // If the media query we’ve specified has an alias and a condition...
         @if $mq == $alias-min and $mq-max == false {
 
@@ -73,9 +73,17 @@
 
     }
 
-    // If the user specifies a non-exitent alias, send them a warning.
-    @if $breakpoint-found == false{
-        @warn "Arrr! Breakpoint ‘#{$mq}’ existiert nicht."
+    // If the user specifies a non-exitent alias, use variable as min-width.
+    @if $breakpoint-found == false and $mq-max == '' {
+      @media screen and (min-width: #{$mq}) {
+        @content;
+      }
+    }
+
+    @if $breakpoint-found == false and $mq-max != '' {
+      @media screen and (min-width: #{$mq}) and (max-width: #{$mq-max}) {
+        @content;
+      }
     }
 
 }
