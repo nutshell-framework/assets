@@ -40,9 +40,14 @@ $headings: 6;
     }
   }
 
-  h#{$i},
-  .heading--#{$i} {
+  h#{$i} {
     @extend %_h#{$i};
+  }
+  .heading--#{$i} {
+    &.ce_headline,
+    > #{headings()}:first-child {
+      @extend %_h#{$i};
+    }
   }
 }
 
