@@ -48,10 +48,8 @@ $headings: 6;
       @extend %_h#{$i};
     }
 
-    > #{headings()} {
-      &:first-child {
-        @extend %_h#{$i};
-      }
+    #{headings()} {
+      @extend %_h#{$i};
     }
   }
 }
