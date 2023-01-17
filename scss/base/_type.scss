@@ -44,9 +44,14 @@ $headings: 6;
     @extend %_h#{$i};
   }
   .heading--#{$i} {
-    &.ce_headline,
-    > #{headings()}:first-child {
+    &.ce_headline {
       @extend %_h#{$i};
+    }
+
+    > #{headings()} {
+      &:first-child {
+        @extend %_h#{$i};
+      }
     }
   }
 }
