@@ -48,6 +48,10 @@ $headings: 6;
       @extend %_h#{$i};
     }
 
+    &.content-headline {
+      @extend %_h#{$i};
+    }
+
     #{headings()} {
       @extend %_h#{$i};
     }
@@ -97,7 +101,8 @@ hr {
   margin-bottom: 1rem;
 }
 
-.ce_text {
+.ce_text,
+.content-text {
   margin-bottom: var(--base-spacing-unit);
 }
 

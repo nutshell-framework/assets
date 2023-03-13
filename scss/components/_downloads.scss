@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -11,22 +11,25 @@
 // --------------------------------------------------
 
 .ce_download,
-.ce_downloads {
+.ce_downloads,
+.content-download,
+.content-downloads {
   margin-bottom: 1rem;
-  
+
   .mime_icon {
     display: inline-block;
     vertical-align: middle;
   }
-  
+
   a {
     display: inline-block;
     color: var(--download-link-color);
     text-decoration: var(--download-link-decoration);
-    
+
   }
 }
 
-.ce_downloads {
+.ce_downloads,
+.content-downloads {
   @include navigation;
 }

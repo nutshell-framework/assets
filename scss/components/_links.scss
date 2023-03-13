@@ -56,7 +56,8 @@ button {
 // [1] add margin, when there is another element following
 div.btn,
 .ce_toplink,
-.toplink {
+.toplink,
+.content-toplink {
 
   > a,
   > button {
@@ -71,7 +72,8 @@ div.btn,
 
 div.btn--primary,
 .ce_toplink,
-.toplink {
+.toplink,
+.content-toplink {
 
   > a,
   > button {
@@ -97,7 +99,8 @@ div.btn--right {
 }
 
 .ce_toplink a,
-.toplink a {
+.toplink a,
+.content-toplink a {
   text-decoration: none;
 }
 
