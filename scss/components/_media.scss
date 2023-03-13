@@ -130,7 +130,7 @@
     }
   }
 
-  .cols_5 {
+  &--cols-5 {
     ul {
       @include make-row(2);
 
@@ -140,9 +140,9 @@
     }
   }
 
-  .cols_6 {
+  &--cols-6 {
     ul {
-      @include make-row(2);
+      @include make-row(3);
 
       @include media-query(screen-md) {
         @include make-row(6);
