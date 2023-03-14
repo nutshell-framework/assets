@@ -95,11 +95,11 @@
 }
 
 .content-gallery {
+  @include navigation;
+
   margin-bottom: var(--base-spacing-unit);
 
   ul {
-    @include navigation;
-
     grid-row-gap: var(--gallery-gutter);
   }
 
