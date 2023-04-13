@@ -46,6 +46,7 @@ select.select {
   border: var(--forms-input-border-width) solid var(--forms-input-border-color);
   background-clip: padding-box; // [3]
   background-image: none; // [6]
+  background-color: var(--forms-input-background);
   line-height: var(--forms-input-line-height);
 }
 
