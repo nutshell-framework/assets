@@ -58,8 +58,11 @@
   }
 
   .accordion {
-    padding: var(--accordion-content-spacing);
     background: var(--accordion-content-background);
     overflow: hidden;
+
+    > div {
+      padding: var(--accordion-content-spacing);
+    }
   }
 }
