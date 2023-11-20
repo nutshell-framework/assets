@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.5 (20.11.2023)
+## 2.0.5 / 2.0.6 (20.11.2023)
 - add custom properties for button border-style and border-color
 - add handorgel accordion support
 
