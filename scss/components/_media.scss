@@ -156,10 +156,18 @@
 }
 
 .ce_player,
-.ce_youtube,
+.ce_youtube {
+  .video_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+    height: auto;
+  }
+}
+
 .content-player,
 .content-youtube {
-  .video_container {
+  figure {
     position: relative;
     padding-bottom: 56.25%;
     width: 100%;
