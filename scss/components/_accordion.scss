@@ -10,24 +10,50 @@
 // COMPONENTS/ACCORDION
 // --------------------------------------------------
 
-// default accordion
+// jQuery and handorgel accordion
 .ce_accordion {
   margin-bottom: var(--accordion-spacing);
 
-  .toggler {
-    font-size: var(--accordion-toggler-font-size);
-    cursor: pointer;
-    background: var(--accordion-toggler-background);
-    color: var(--accordion-toggler-color);
-    padding: var(--accordion-toggler-spacing);
-    border: var(--accordion-toggler-border);
+  &:not(.handorgel) {
+    .toggler {
+      font-size: var(--accordion-toggler-font-size);
+      cursor: pointer;
+      background: var(--accordion-toggler-background);
+      color: var(--accordion-toggler-color);
+      padding: var(--accordion-toggler-spacing);
+      border: var(--accordion-toggler-border);
 
-    &:hover {
-      color: var(--accordion-toggler-color-hover);
+      &:hover {
+        color: var(--accordion-toggler-color-hover);
+      }
+
+      &:focus {
+        outline: 0;
+      }
     }
+  }
 
-    &:focus {
-      outline: 0;
+  &.handorgel {
+    .toggler {
+      button {
+        display: flex;
+        width: 100%;
+        appearance: none;
+        font-size: var(--accordion-toggler-font-size);
+        cursor: pointer;
+        background: var(--accordion-toggler-background);
+        color: var(--accordion-toggler-color);
+        padding: var(--accordion-toggler-spacing);
+        border: var(--accordion-toggler-border);
+
+        &:hover {
+          color: var(--accordion-toggler-color-hover);
+        }
+
+        &:focus {
+          outline: 0;
+        }
+      }
     }
   }
 
