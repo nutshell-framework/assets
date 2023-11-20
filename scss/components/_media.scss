@@ -197,4 +197,26 @@
     width: 100% !important;
     height: 100% !important;
   }
+
+  button {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    appearance: none;
+    border: none;
+    padding: 0;
+
+    img {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    p {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      padding: var(--base-spacing-unit);
+      background: var(--base-overlay-background);
+      color: var(--color-text-inverted);
+    }
+  }
 }
