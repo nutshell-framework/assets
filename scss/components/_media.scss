@@ -167,7 +167,8 @@
 
 .content-player,
 .content-youtube {
-  figure:has(video) {
+  figure:has(video),
+  figure:has(iframe) {
     position: relative;
     padding-bottom: 56.25%;
     width: 100%;
