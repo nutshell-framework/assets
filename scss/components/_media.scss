@@ -167,7 +167,7 @@
 
 .content-player,
 .content-youtube {
-  figure {
+  figure:has(video) {
     position: relative;
     padding-bottom: 56.25%;
     width: 100%;
