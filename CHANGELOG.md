@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.7 (11.12.2023)
+- remove outdated css classes for search forms
+- fix youtube preview image (and 3rd-party notes)
+
 ## 2.0.5 / 2.0.6 (20.11.2023)
 - add custom properties for button border-style and border-color
 - add handorgel accordion support
