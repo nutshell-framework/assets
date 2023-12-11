@@ -19,7 +19,6 @@
     flex-flow: row wrap; // [1]
   }
 
-  .text,
   .widget-text {
     margin-bottom: var(--base-spacing-unit-sm); // [2]
 
@@ -33,18 +32,13 @@
     }
   }
 
-  .submit,
-  .submit_container,
   .widget-submit {
     margin-bottom: var(--base-spacing-unit-sm);
     margin-left: var(--base-spacing-unit-xs);
     align-self: flex-end; // [3]
-  }
 
-  .submit_container,
-  .widget-submit {
-	  .submit {
-    	margin-left: 0;
+    .submit {
+      margin-left: 0;
     }
   }
 
