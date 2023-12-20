@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.8 (20.12.2023)
+- update `invisible` class styles and mixin
+
 ## 2.0.7 (11.12.2023)
 - remove outdated css classes for search forms
 - fix youtube preview image (and 3rd-party notes)
