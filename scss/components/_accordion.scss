@@ -33,6 +33,7 @@
     }
   }
 
+  // Contao 5.2 Legacy Element
   &.handorgel {
     .toggler {
       button {
@@ -58,6 +59,43 @@
   }
 
   .accordion {
+    background: var(--accordion-content-background);
+    overflow: hidden;
+
+    > div {
+      padding: var(--accordion-content-spacing);
+    }
+  }
+}
+
+// Contao 5.3 and up
+.content-accordion {
+  .handorgel__header {
+    line-height: var(--base-line-height);
+    margin-bottom: var(--accordion-spacing);
+  }
+
+  .handorgel__header__button {
+    display: flex;
+    width: 100%;
+    appearance: none;
+    font-size: var(--accordion-toggler-font-size);
+    cursor: pointer;
+    background: var(--accordion-toggler-background);
+    color: var(--accordion-toggler-color);
+    padding: var(--accordion-toggler-spacing);
+    border: var(--accordion-toggler-border);
+
+    &:hover {
+      color: var(--accordion-toggler-color-hover);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .handorgel__content {
     background: var(--accordion-content-background);
     overflow: hidden;
 

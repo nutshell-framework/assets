@@ -10,6 +10,15 @@
 // COMPONENTS/SLIDER
 // --------------------------------------------------
 
+.content-slider {
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: none;
+    background: transparent;
+    appearance: none;
+  }
+}
+
 // template changes:
 // .ce_slider_stop - put label inside span.invisible containers, so that we can use arrows
 
