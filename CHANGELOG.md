@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.9 (16.02.2024)
+- add support for new contao 5.3 nested elements
+
 ## 2.0.8 (20.12.2023)
 - update `invisible` class styles and mixin
 
