@@ -37,6 +37,11 @@
     font-weight: 700;
   }
 
+  .widget-captcha {
+    order: -1;
+    width: 100%;
+  }
+
   .submit {
     margin-left: var(--base-spacing-unit-xs);
   }
