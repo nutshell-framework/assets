@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.10 (06.03.2024)
+- newsletter subscribe/unsubscribe: fix captcha when visible
+- newsletter subscribe/unsubscribe: fix channel checkboxes when activated
+
 ## 2.0.9 (16.02.2024)
 - add support for new contao 5.3 nested elements
 
