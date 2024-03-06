@@ -43,6 +43,11 @@
     margin-bottom: var(--base-spacing-unit);
   }
 
+  .widget-checkbox {
+    order: 1;
+    width: 100%;
+  }
+
   .submit {
     margin-left: var(--base-spacing-unit-xs);
   }
