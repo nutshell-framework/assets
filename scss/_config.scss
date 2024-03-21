@@ -13,6 +13,7 @@ $config-loaded: true;
 
 // MIXINS/GENERAL
 $grid-columns: 12 !default;
+$grid__columns: $grid-columns !default; // fallback for older themes
 // ----------------------------------------------------
 
 // MIXINS/RESPONSIVE
@@ -137,5 +138,5 @@ $set-select-height: false !default;
 // ----------------------------------------------------
 
 // COMPONENTS/SEARCH
-$search-hide-label:       true !default;
+$search-hide-label: true !default;
 // ----------------------------------------------------
