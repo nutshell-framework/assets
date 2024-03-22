@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -11,7 +11,7 @@
 // --------------------------------------------------
 
 // VARIABLES
-// [1] some fonts use different sizes for left and right arrow. 
+// [1] some fonts use different sizes for left and right arrow.
 //     We take Arial to make sure it has the same size.
 
 html {
@@ -31,62 +31,71 @@ html {
 // .ce_slider_stop - put label inside span.invisible containers, so that we can use arrows
 
 
-// default slider
+.content-swiper {
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: none;
+    background: transparent;
+    appearance: none;
+  }
+}
+
+// legacy slider
 // NOTES:
 // [2] overrides default contao slider styling
 .slider {
   position: relative;
-  
+
   .slider-control {
   	position: static; // [2]
   	height: 0; // [2]
   }
-  
+
   .slider-control a {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     font-size: var(--arrow-size);
     line-height: 1;
-    
+
     position: absolute;
     display: block;
     color: var(--arrow-color);
     font-family: var(--arrow-font-family);
-    
+
     &:before {
       padding: var(--base-spacing-unit--sm);
       display: block;
     }
-    
+
     &:hover {
       opacity: 0.5;
     }
   }
-  
+
   .slider-prev:before {
     content: "◄";
   }
-  
+
   .slider-next:before {
     content: "►";
   }
-  
+
   .slider-menu {
     font-size: var(--menu-point-size);
     line-height: 1;
-    
+
     top: auto; // [2]
     bottom: 0; // [2]
-    
+
     b {
       color: var(--menu-point-color); // [2]
     }
-    
+
     b.active {
       color: var(--menu-point-color--active); // [2]
     }
-    
+
     b:hover {
       opacity: 0.5;
     }

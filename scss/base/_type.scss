@@ -190,6 +190,12 @@ html {
       }
     }
 
+    .content-text + .content-text & {
+      &:first-child {
+        margin-top: $margin-top;
+      }
+    }
+
     @if $count < 6 {
       & + h#{$count + 1} { // [4]
         margin-top: -1 * $margin-bottom;
@@ -241,7 +247,8 @@ hr {
   margin-bottom: 1rem;
 }
 
-.ce_text {
+.ce_text,
+.content-text {
   margin-bottom: var(--base-spacing-unit);
 }
 

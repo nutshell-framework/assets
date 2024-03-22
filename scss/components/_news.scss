@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -36,36 +36,36 @@ $news-grid-columns--lg: 3 !default;
 // [2] headline for FE-Module
 .news-list {
   margin-bottom: var(--base-spacing-unit);
-  
-  > { 
+
+  > {
     #{headings()} {
       margin-bottom: 0;
     }
   }
-  
+
   .info {
     margin-bottom: 0;
   }
-    
+
   .float_left {
     margin-right: var(--base-spacing-unit);
   }
-  
+
   .float_right {
     margin-left: var(--base-spacing-unit);
-  } 
-  
+  }
+
   .layout_short,
   .layout_latest,
   .layout_simple {
-    
-    > { 
-      #{headings()} { 
+
+    > {
+      #{headings()} {
         margin-top: var(--base-spacing-unit);
       }
     }
   }
-  
+
   .layout_simple,
   .layout_upcoming {
     time,
@@ -74,7 +74,7 @@ $news-grid-columns--lg: 3 !default;
       display: inline-block;
     }
   }
-  
+
   .header {
     margin-top: var(--base-spacing-unit);
   }
@@ -82,10 +82,10 @@ $news-grid-columns--lg: 3 !default;
 
 .news-grid {
   @include make-row;
-  
+
   margin-bottom: var(--base-spacing-unit);
-  
-  > { 
+
+  > {
     #{headings()} {
       @include make-col(12);
     }
@@ -95,20 +95,20 @@ $news-grid-columns--lg: 3 !default;
   .layout_latest,
   .layout_simple {
     @include column-floating;
-    
+
     @include media-query(screen-sm) {
       @include make-col((12 / $news-grid-columns--sm));
     }
-    
+
     @include media-query(screen-md) {
       @include make-col((12 / $news-grid-columns--md));
     }
-    
+
     @include media-query(screen-lg) {
       @include make-col((12 / $news-grid-columns--lg));
     }
   }
-  
+
   .layout_simple {
     time {
       display: block;
@@ -118,10 +118,10 @@ $news-grid-columns--lg: 3 !default;
 
 .news-menu {
   @include navigation();
-    
+
   .year {
     margin-bottom: var(--base-spacing-unit--sm);
-    
+
      > a,
      > .active {
       color: inherit;
@@ -129,7 +129,7 @@ $news-grid-columns--lg: 3 !default;
       font-family: var(--headings__font-family);
     }
   }
-  
+
   .level_2 li {
     margin-bottom: var(--base-spacing-unit--xs);
   }

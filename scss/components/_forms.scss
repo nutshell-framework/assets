@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -26,32 +26,28 @@ html {
 
 // --------------------------------------------------
 
-// [1] focus-highlighting on inputs was cut off by overflow: hidden
-// [2] reset for FF and Chrome, coming with a min-width
-// [3] force IE8 to wrap long content
-// [4] create half-transparent borders (otherwise you have a half-transparent border using the input background color) 
-// [5] reset height
-// [6] disable mobile safari make it a search field with different border-radius and size
-// [7] reset unusual Firefox-on-Android default style
-// [8] make sure, the whole input is visible (chrome)
-// [9] bring button-text and file-name on same base-line in Chrome
+// [1] reset for FF and Chrome, coming with a min-width
+// [2] force IE8 to wrap long content
+// [3] create half-transparent borders (otherwise you have a half-transparent border using the input background color)
+// [4] reset height
+// [5] disable mobile safari make it a search field with different border-radius and size
+// [6] reset unusual Firefox-on-Android default style
+// [7] make sure, the whole input is visible (chrome)
+// [8] bring button-text and file-name on same base-line in Chrome
 // [11] space between checkbox/radio + label, when inline
-// [12] make sure select and inputs have the same height
+// [10] make sure select and inputs have the same height
 // calculation: ((1rem for text + base-spacing-unit for padding) * 1.2 normal line-height) - 2px for border
-.ce_form {
-  overflow: visible; // [1]
-}
 
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
-  min-width: 0; // [2]
+  min-width: 0; // [1]
 }
 
 label {
   display: inline-block;
-  max-width: 100%; // [3]
+  max-width: 100%; // [2]
   margin-bottom: var(--base-spacing-unit--xs);
 }
 
@@ -64,19 +60,19 @@ select.select {
   padding: var(--base-spacing-unit--sm) var(--base-spacing-unit--sm);
   border-radius: var(--input-border-radius);
   border: var(--input-border-width) solid var(--input-border-color);
-  background-clip: padding-box; // [4]
-  background-image: none; // [7]
+  background-clip: padding-box; // [3]
+  background-image: none; // [6]
   line-height: normal;
 }
 
 @if($set-select-height==true) {
   select.select {
-    height: calc(((1rem + var(--base-spacing-unit)) * 1.2) - 2px); // [12]
+    height: calc(((1rem + var(--base-spacing-unit)) * 1.2) - 2px); // [10]
   }
 }
 
 textarea.textarea {
-  height: auto; // [5]
+  height: auto; // [4]
 }
 
 .widget-text,
@@ -92,22 +88,22 @@ button.submit {
 }
 
 input[type="search"] {
-  -webkit-appearance: none; // [6]
+  appearance: none; // [5]
 }
 
 input[type="file"] {
   display: block;
-  line-height: 1; // [9]
+  line-height: 1; // [8]
 }
 
 // Checkboxes and radios
 input.radio,
 input.checkbox {
-  margin-left: 1px; // [8]
+  margin-left: 1px; // [7]
   margin-right: var(--base-spacing-unit--xs);
   line-height: var(--base-line-height);
   vertical-align: middle;
-  
+
   + label {
     margin-right: var(--base-spacing-unit--xs); // [11]
     margin-bottom: 0;
@@ -120,7 +116,7 @@ input.checkbox {
 .widget-select,
 .widget-upload {
   margin-bottom: var(--base-spacing-unit);
-  
+
   legend {
     font-weight: 700;
   }

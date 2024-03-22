@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -16,7 +16,7 @@
 
 // --------------------------------------------------
 
-// set a default margin-bottom for some elements 
+// set a default margin-bottom for some elements
 // [1] call every headline element (h1-h6)
 #{headings()} { // [1]
   margin-top: 0;
@@ -27,12 +27,12 @@ ul, ol, dl,
 blockquote, p, address,
 hr,
 fieldset, figure,
-pre {    
+pre {
   margin-bottom: var(--base-spacing-unit);
 }
 
 
-// set a default margin-left for some elements 
+// set a default margin-left for some elements
 ul, ol, dd {
   margin-left: var(--base-spacing-unit);
 }

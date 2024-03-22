@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -45,7 +45,7 @@ html {
 %button--primary {
   background: var(--button-bg);
   color: var(--color-btn-text);
-  
+
   &:hover {
     background: var(--button-bg-hover);
   }
@@ -55,7 +55,7 @@ a.btn,
 span.btn,
 button.btn {
   @extend %button;
-  
+
   margin-bottom: var(--base-spacing-unit);
 }
 
@@ -68,13 +68,14 @@ button.btn--primary {
 // [1] add margin, when there is another element following
 div.btn,
 .ce_toplink,
+.content-toplink,
 .toplink {
-  
+
   > a,
   > button {
     @extend %button;
   }
-  
+
   // [1]
   &:not(:last-child) {
     margin-bottom: var(--base-spacing-unit);
@@ -83,10 +84,11 @@ div.btn,
 
 div.btn--primary,
 .ce_toplink,
+.content-toplink,
 .toplink {
 
   > a,
-  > button {    
+  > button {
     @extend %button--primary;
   }
 }
@@ -109,12 +111,13 @@ div.btn--right {
 }
 
 .ce_toplink a,
+.content-toplink a,
 .toplink a {
   text-decoration: none;
 }
 
 
-// used for 
+// used for
 // * news-reader
 // * events-reader
 // * faq-reader
@@ -124,7 +127,7 @@ div.btn--right {
   border-top: var(--base-border);
   margin-top: var(--base-spacing-unit);
   padding-top: var(--base-spacing-unit--sm);
-  
+
   a {
     text-decoration: none;
   }

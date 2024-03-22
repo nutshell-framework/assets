@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -33,22 +33,33 @@ html {
     display: flex; // [1]
     flex-flow: row wrap; // [1]
   }
-  
+
   .text,
   .widget-text {
     margin-bottom: 0; // [2]
-    
+
     display: inline-block;
     flex: 1;
   }
-  
+
   .error {
     margin-bottom: 0;
-    
+
     flex: 1 100%; // [3]
     font-weight: 700;
   }
-  
+
+  .widget-captcha {
+    order: -1;
+    width: 100%;
+    margin-bottom: var(--base-spacing-unit);
+  }
+
+  .widget-checkbox {
+    order: 1;
+    width: 100%;
+  }
+
   .submit {
     margin-left: var(--base-spacing-unit--xs);
   }
@@ -56,28 +67,28 @@ html {
 
 .newsletter-list {
   @include navigation;
-  
+
   li {
-    border-bottom: var(--newsletter-list-border);   
+    border-bottom: var(--newsletter-list-border);
     padding-top: var(--base-spacing-unit);
     padding-bottom: var(--base-spacing-unit);
     display: block;
-    
+
     &:first-of-type {
       border-top: var(--newsletter-list-border);
     }
-    
+
     @include media-query(screen-sm) {
       font-size: var(--heading-4__size);
       line-height: var(--heading-4__line-height);
     }
-    
+
     @include media-query(screen-md) {
       font-size: var(--heading-3__size);
       line-height: var(--heading-3__line-height);
     }
-    
-    a {    
+
+    a {
       &:hover {
         opacity: 0.5;
       }
