@@ -23,13 +23,16 @@
   }
 }
 
-@mixin padding-default($padding: var(--base-spacing-unit)) {
-  padding-left:  $padding;
+@mixin padding-default($padding: var(--layout-spacing-sides)) {
+  padding-left: $padding;
   padding-right: $padding;
 }
 
 // make-row
-@mixin make-row($total-columns: $grid-columns, $grid-gutter: var(--grid-gutter)) {
+@mixin make-row(
+  $total-columns: $grid-columns,
+  $grid-gutter: var(--grid-gutter)
+) {
   display: grid;
   grid-template-columns: repeat($total-columns, 1fr);
   grid-column-gap: $grid-gutter;
@@ -47,7 +50,7 @@
 @mixin column-floating() {
   grid-column: 1 / -1;
 
-  @supports not(display: grid) {
+  @supports not (display: grid) {
     padding-left: var(--grid-gutter-half);
     padding-right: var(--grid-gutter-half);
   }
@@ -110,16 +113,15 @@
   width: 1px;
 }
 
-
 // Functions
 // function map-deep-get()
 // function to get a value from a nested map, see _type.scss for usage
 //
 @function map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
-    @return $map;
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
 }
 
 // function headings()
@@ -132,10 +134,10 @@
 // #{headings(2,4) { … } will result in
 // h2,h3,h4 { … }
 // ---
-@function headings($first:1, $last:6) {
+@function headings($first: 1, $last: 6) {
   @if $first == $last {
-      @return 'h#{$first}';
+    @return 'h#{$first}';
   } @else {
-      @return 'h#{$first},' + headings($first+1, $last);
+    @return 'h#{$first},' + headings($first + 1, $last);
   }
 }
