@@ -159,8 +159,11 @@ html {
   // --------------------------------------------------
 
   // COMPONENTS/LINKS
-  --links-color:       var(--color-highlight);
-  --links-color-hover: var(--color-highlight);
+  --links-color:         var(--color-highlight);
+  --links-color-hover:   var(--color-highlight);
+  --links-color-visited:  var(--links-color);
+  --links-outline-focus: 2px dotted var(--links-outline-color, var(--color-highlight));
+  --links-outline-active: none;
 
   --button-color:            var(--color-text-inverted);
   --button-background:       var(--color-highlight);

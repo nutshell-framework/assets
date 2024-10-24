@@ -12,45 +12,64 @@
 
 // set a default margin-bottom for some elements
 // [1] call every headline element (h1-h6)
-#{headings()} { // [1]
+#{headings()} {
+  // [1]
   margin-top: 0;
   margin-bottom: var(--base-spacing-unit-sm);
 }
 
-ul, ol, dl,
-blockquote, p, address,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
 hr,
-fieldset, figure,
+fieldset,
+figure,
 pre {
   margin-bottom: var(--base-spacing-unit);
 }
 
-
 // set a default margin-left for some elements
-ul, ol, dd {
+ul,
+ol,
+dd {
   margin-left: var(--base-spacing-unit);
 }
-
 
 // Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
 .clearfix {
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
 }
 
-
 // hyperlink
+a,
+[tabindex='0'] {
+  &:focus-visible {
+    outline: var(--links-outline-focus);
+  }
+
+  &:active {
+    outline: var(--links-outline-active);
+  }
+}
+
 a {
   color: var(--links-color);
+
+  &:visited {
+    color: var(--links-color-visited);
+  }
 }
 
 :not(p) a {
   text-decoration: none;
 }
-
 
 // images
 figure {
