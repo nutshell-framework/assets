@@ -15,9 +15,11 @@
   border-radius: var(--button-border-radius);
   padding: var(--button-spacing);
   display: inline-block;
-  border: var(--button-border-width) var(--button-border-style, solid) var(--button-border-color, transparent);
+  border: var(--button-border-width) var(--button-border-style, solid)
+    var(--button-border-color, transparent);
   font-family: var(--button-font-family);
   font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
   line-height: var(--button-line-height);
   text-align: center;
   background: transparent;
@@ -58,7 +60,6 @@ div.btn,
 .ce_toplink,
 .toplink,
 .content-toplink {
-
   > a,
   > button {
     @extend %button;
@@ -74,7 +75,6 @@ div.btn--primary,
 .ce_toplink,
 .toplink,
 .content-toplink {
-
   > a,
   > button {
     @extend %button--primary;
@@ -103,7 +103,6 @@ div.btn--right {
 .content-toplink a {
   text-decoration: none;
 }
-
 
 // used for
 // * news-reader
