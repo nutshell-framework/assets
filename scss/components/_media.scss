@@ -107,7 +107,6 @@
     ul {
       @include make-row(2);
     }
-
   }
 
   &--cols-3 {
@@ -181,7 +180,10 @@
   video {
     border: 0;
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100% !important;
     height: 100% !important;
   }
@@ -189,11 +191,13 @@
 
 .ce_youtube,
 .content-youtube {
-  iframe,
-  a {
+  iframe {
     border: 0;
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100% !important;
     height: 100% !important;
   }

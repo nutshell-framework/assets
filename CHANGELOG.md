@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.14 (12.06.2026)
+
+- Youtube: Anker-Anweisung entfernt, da es sonst zu Problemen mit Contao Consent und Co. kommen kann
+
 ## 2.0.13 (24.01.2025)
 
 - Custom Property `--buton-font-size` ergänzt
