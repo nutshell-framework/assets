@@ -70,6 +70,8 @@
 
 // Contao 5.3 and up
 .content-accordion {
+  border-bottom: 0;
+
   .handorgel__header {
     line-height: var(--base-line-height);
     margin-bottom: var(--accordion-spacing);
