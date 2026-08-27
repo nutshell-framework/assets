@@ -16,13 +16,6 @@
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
   column-gap: var(--grid-gutter);
   grid-auto-columns: 1fr;
-
-  @supports not (display: grid) {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--grid-gutter) / 2);
-    margin-right: calc(-1 * var(--grid-gutter) / 2);
-  }
 }
 
 .row--gap-y {
@@ -34,11 +27,6 @@
   display: grid;
   grid-column: 1 / -1;
   max-width: 100%;
-
-  @supports not(display: grid) {
-    padding-left: var(--grid-gutter-half);
-    padding-right: var(--grid-gutter-half);
-  }
 }
 
 .col {
@@ -48,83 +36,89 @@
 // [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
 // [2] $current - actual viewport (e.g. "xs")
 // [3] $i - counter, returns the actual grid-column
-// [4] var(--grid-columns) - go through available columns (e.g. 1 --> 12)
-
-// [5] override clear- class for the next viewport by default
-// this means, you can add a clear-xs class to an element, but the clear will only affect the current viewport.
-@for $i from 1 through $grid-columns { // [3][4]
-  .col-#{$i} { // [2][3]
+// [4] $grid-columns - go through available columns (e.g. 1 --> 12)
+// [3][4]
+@for $i from 1 through $grid-columns {
+  // [2][3]
+  .col-#{$i} {
     grid-column: span $i / span $i;
-
-    @supports not (display: grid) {
-      width: percentage($i/$grid-columns);
-    }
   }
 
-  .row-start-#{$i} { // [2][3]
-      grid-row-start: $i;
+  // [2][3]
+  .row-start-#{$i} {
+    grid-row-start: $i;
   }
 
-  .row-span-#{$i} { // [2][3]
-      grid-row: span $i / span $i;
+  // [2][3]
+  .row-span-#{$i} {
+    grid-row: span $i / span $i;
   }
 }
 
-@for $size from 1 through length($breakpoints) { // [1]
-  $x:   nth($breakpoints, $size); // [2]
-  $current:   nth($x, 1); // [2]
+// [1]
+@for $size from 1 through length($breakpoints) {
+  $x: nth($breakpoints, $size); // [2]
+  $current: nth($x, 1); // [2]
 
   // column creation
-  @for $i from 1 through $grid-columns { // [3][4]
-    .col-#{$current}-#{$i} { // [2][3]
+  // [3][4]
+  @for $i from 1 through $grid-columns {
+    // [2][3]
+    .col-#{$current}-#{$i} {
       @extend %column-floating;
     }
   }
 
   // width creation for every col- class
-  @include media-query(screen-#{$current}) { // [2]
-
-    @for $i from 1 through $grid-columns { // [3][4]
-      .col-#{$current}-#{$i} { // [2][3]
+  // [2]
+  @include media-query(screen-#{$current}) {
+    // [3][4]
+    @for $i from 1 through $grid-columns {
+      // [2][3]
+      .col-#{$current}-#{$i} {
         grid-column: span $i / span $i;
-
-        @supports not (display: grid) {
-          width: percentage($i/$grid-columns);
-        }
       }
     }
   }
 
   // height creation for every row-span- class
-  @include media-query(screen-#{$current}) { // [2]
-
-    @for $i from 1 through $grid-columns { // [3][4]
-      .row-span-#{$current}-#{$i} { // [2][3]
+  // [2]
+  @include media-query(screen-#{$current}) {
+    // [3][4]
+    @for $i from 1 through $grid-columns {
+      // [2][3]
+      .row-span-#{$current}-#{$i} {
         grid-row: span $i / span $i;
       }
     }
   }
 
   // .col-start and .row-start creation
-  @include media-query(screen-#{$current}) { // [2]
-
-    @for $i from 1 through $grid-columns { // [3]
-      .col-start-#{$current}-#{$i} { // [2][3]
+  // [2]
+  @include media-query(screen-#{$current}) {
+    // [3]
+    @for $i from 1 through $grid-columns {
+      // [2][3]
+      .col-start-#{$current}-#{$i} {
         grid-column-start: $i;
       }
-      .row-start-#{$current}-#{$i} { // [2][3]
+      // [2][3]
+      .row-start-#{$current}-#{$i} {
         grid-row-start: $i;
       }
     }
   }
 
   //pull-left & -right creation
-  @include media-query(screen-#{$current}) { // [2]
-    .pull-right-#{$current} { // [2]
+  // [2]
+  @include media-query(screen-#{$current}) {
+    // [2]
+    .pull-right-#{$current} {
       grid-column-end: -1;
     }
 
-    .pull-left-#{$current} { // [2]
+    // [2]
+    .pull-left-#{$current} {
       grid-row-start: 1;
       grid-column-end: inherit;
     }
@@ -136,73 +130,84 @@
 // [2] $current - actual viewport (e.g. "xs")
 // [3] $i - counter, returns the actual grid-column
 // [4] $grid-columns - go through available columns (e.g. 1 --> 12)
-.justify-start { // [2][3]
+.justify-start {
   justify-self: start;
   text-align: left;
 }
 
-.justify-center { // [2][3]
+.justify-center {
   justify-self: center;
   text-align: center;
 }
 
-.justify-end { // [2][3]
+.justify-end {
   justify-self: end;
   text-align: right;
 }
 
-@for $size from 1 through length($breakpoints) { // [1]
-  $x:   nth($breakpoints, $size); // [2]
-  $current:   nth($x, 1); // [2]
+// [1]
+@for $size from 1 through length($breakpoints) {
+  $x: nth($breakpoints, $size); // [2]
+  $current: nth($x, 1); // [2]
 
   // width creation for every col- class
-  @include media-query(screen-#{$current}) { // [2]
-
-    .justify-#{$current}-start { // [2][3]
+  // [2]
+  @include media-query(screen-#{$current}) {
+    // [2][3]
+    .justify-#{$current}-start {
       justify-self: start;
       text-align: left;
     }
 
-    .justify-#{$current}-center { // [2][3]
+    // [2][3]
+    .justify-#{$current}-center {
       justify-self: center;
       text-align: center;
     }
 
-    .justify-#{$current}-end { // [2][3]
+    // [2][3]
+    .justify-#{$current}-end {
       justify-self: end;
       text-align: right;
     }
   }
 }
 
-.align-start { // [2][3]
+// [2][3]
+.align-start {
   align-self: start;
 }
 
-.align-center { // [2][3]
+// [2][3]
+.align-center {
   align-self: center;
 }
 
-.align-end { // [2][3]
+// [2][3]
+.align-end {
   align-self: end;
 }
 
-@for $size from 1 through length($breakpoints) { // [1]
-  $x:   nth($breakpoints, $size); // [2]
-  $current:   nth($x, 1); // [2]
+// [1]
+@for $size from 1 through length($breakpoints) {
+  $x: nth($breakpoints, $size); // [2]
+  $current: nth($x, 1); // [2]
 
   // width creation for every col- class
-  @include media-query(screen-#{$current}) { // [2]
-
-    .align-#{$current}-start { // [2][3]
+  // [2]
+  @include media-query(screen-#{$current}) {
+    // [2][3]
+    .align-#{$current}-start {
       align-self: start;
     }
 
-    .align-#{$current}-center { // [2][3]
+    // [2][3]
+    .align-#{$current}-center {
       align-self: center;
     }
 
-    .align-#{$current}-end { // [2][3]
+    // [2][3]
+    .align-#{$current}-end {
       align-self: end;
     }
   }

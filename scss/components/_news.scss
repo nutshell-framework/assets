@@ -12,11 +12,11 @@
 
 // news list
 // [1] call every headline element (h1-h6)
-// [2] headline for FE-Module
 .news-list {
   margin-bottom: var(--base-spacing-unit);
 
   > {
+    // [1]
     #{headings()} {
       margin-bottom: 0;
     }
@@ -39,6 +39,7 @@
   .layout_simple {
 
     > {
+      // [1]
       #{headings()} {
         margin-top: var(--base-spacing-unit);
       }
@@ -61,7 +62,7 @@
 
 .news-grid {
   display: grid;
-  grid-gap: var(--grid-gutter);
+  gap: var(--grid-gutter);
   margin-bottom: var(--base-spacing-unit);
 
   @include media-query(screen-sm) {
@@ -83,6 +84,7 @@
   margin-bottom: var(--base-spacing-unit);
 
   > {
+    // [1]
     #{headings()} {
       grid-column: 1 / -1;
     }

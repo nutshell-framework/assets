@@ -32,7 +32,7 @@
   > ul {
     @include make-row();
 
-    grid-row-gap: var(--gallery-gutter);
+    row-gap: var(--gallery-gutter);
 
     padding: 0;
     margin: 0;
@@ -100,7 +100,7 @@
   margin-bottom: var(--base-spacing-unit);
 
   ul {
-    grid-row-gap: var(--gallery-gutter);
+    row-gap: var(--gallery-gutter);
   }
 
   &--cols-2 {

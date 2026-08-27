@@ -11,7 +11,6 @@
 // --------------------------------------------------
 
 // [1] call every headline element (h1-h6)
-// [2] headline for FE-Module
 .faq-list {
   @include navigation();
 
@@ -28,7 +27,8 @@
   }
 
   > {
-    #{headings()} { // [1]
+    // [1]
+    #{headings()} {
       margin-bottom: 0;
 
       &:after {
@@ -40,7 +40,8 @@
   }
 
   article > {
-    #{headings()} { // [1]
+    // [1]
+    #{headings()} {
       margin-bottom: 0;
 
       &:after {
@@ -54,7 +55,8 @@
 
 .faq-page {
   > {
-    #{headings()} { // [1]
+    // [1]
+    #{headings()} {
       margin-bottom: 0;
 
       &:after {
@@ -66,7 +68,8 @@
   }
 
   article > {
-    #{headings()} { // [1]
+    // [1]
+    #{headings()} {
       margin-bottom: 0;
 
       &:after {

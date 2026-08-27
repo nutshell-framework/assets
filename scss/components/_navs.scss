@@ -128,13 +128,6 @@
   text-align: center;
   line-height: 1;
 
-  @supports not (display: grid) {
-    display: flex;
-    flex: 1 1 auto;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   @include media-query(screen-sm) {
     grid-template-columns: 1fr 1fr;
   }

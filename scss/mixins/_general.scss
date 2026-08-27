@@ -35,25 +35,13 @@
 ) {
   display: grid;
   grid-template-columns: repeat($total-columns, 1fr);
-  grid-column-gap: $grid-gutter;
+  column-gap: $grid-gutter;
   grid-auto-columns: 1fr;
-
-  @supports not (display: grid) {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--grid-gutter) / 2);
-    margin-right: calc(-1 * var(--grid-gutter) / 2);
-  }
 }
 
 // column-floating
 @mixin column-floating() {
   grid-column: 1 / -1;
-
-  @supports not (display: grid) {
-    padding-left: var(--grid-gutter-half);
-    padding-right: var(--grid-gutter-half);
-  }
 }
 
 // make-column mixin
@@ -61,19 +49,11 @@
   @include column-floating();
 
   grid-column: span $columns / span $columns;
-
-  @supports not (display: grid) {
-    width: percentage($columns/$grid-columns);
-  }
 }
 
 // make-width mixin
-// [1] fallback for browser that can't calculate
 @mixin make-width($width, $align: auto) {
-  $width-percentage: $width / $grid-columns * $wrapper-max;
-
-  max-width: $width-percentage; //[1]
-  max-width: calc(#{$width-percentage} - var(--grid-gutter));
+  max-width: calc(#{$width} / #{$grid-columns} * #{$wrapper-max} - var(--grid-gutter));
 
   @if $align == auto or center {
     margin-left: auto;

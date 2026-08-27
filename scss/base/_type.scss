@@ -11,15 +11,13 @@
 // --------------------------------------------------
 
 // H1 — h6: Generate Element Styles from config
-// [1] more space between last text-element and new headline
-// [2] combined headlines - example: h1 + h2
-// [3] correct margin-top for headlines, when in a new content element
-// [4] ex: h1 + h2
-// [5] base font size
-// [6] loop through all viewports and add font-size for every viewport
+// [1] $i - counter, returns the actual headline level (1 --> 6)
+// [2] loop through all viewports and add a font-size for every viewport
+// [3] $current - actual viewport (e.g. "sm")
 
 $headings: 6;
-@for $i from 1 through $headings { // [3][4]
+// [1]
+@for $i from 1 through $headings {
   %_h#{$i} {
     font-family: var(--h#{$i}-font-family);
     font-size: var(--h#{$i}-font-size);
@@ -29,9 +27,10 @@ $headings: 6;
     margin-top: var(--h#{$i}-spacing-top);
     margin-bottom: var(--h#{$i}-spacing-bottom);
 
-    @for $size from 2 through length($breakpoints) { // [1]
-      $x:   nth($breakpoints, $size); // [2]
-      $current:   nth($x, 1); // [2]
+    // [2]
+    @for $size from 2 through length($breakpoints) {
+      $x: nth($breakpoints, $size); // [3]
+      $current: nth($x, 1); // [3]
       $viewport: nth($current, 1);
 
       @include media-query(screen-#{$viewport}) {

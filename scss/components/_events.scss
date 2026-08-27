@@ -12,12 +12,12 @@
 
 // event list
 // [1] call every headline element (h1-h6)
-// [2] headline for FE-Module
 .events-list {
   margin-bottom: var(--base-spacing-unit);
 
   > {
-    #{headings()} { // [1]
+    // [1]
+    #{headings()} {
       margin-bottom: 0;
     }
   }
@@ -38,7 +38,8 @@
   .event {
 
     > {
-      #{headings()} { // [1]
+      // [1]
+      #{headings()} {
         margin-top: var(--base-spacing-unit);
       }
     }
@@ -59,7 +60,7 @@
 
 .events-grid {
   display: grid;
-  grid-gap: var(--grid-gutter);
+  gap: var(--grid-gutter);
   margin-bottom: var(--base-spacing-unit);
 
   @include media-query(screen-sm) {
@@ -80,7 +81,6 @@
 }
 
 
-// [2] add border-top to the first element after headline
 .events-menu {
   @include navigation();
 
