@@ -28,8 +28,8 @@
   padding-right: $padding;
 }
 
-// make-row
-@mixin make-row(
+// make-grid
+@mixin make-grid(
   $total-columns: $grid-columns,
   $grid-gutter: var(--grid-gutter)
 ) {
@@ -37,6 +37,15 @@
   grid-template-columns: repeat($total-columns, 1fr);
   column-gap: $grid-gutter;
   grid-auto-columns: 1fr;
+}
+
+// make-row
+@mixin make-row(
+  $total-columns: $grid-columns,
+  $grid-gutter: var(--grid-gutter)
+) {
+  @warn 'make-row() is deprecated. use make-grid() instead.';
+  @include make-grid($total-columns, $grid-gutter);
 }
 
 // column-floating
@@ -71,14 +80,19 @@
   }
 }
 
-// make-offset
-@mixin make-offset($width, $direction: left) {
-  @warn 'make-offset() is deprecated. use make-start() instead.';
-}
-
 // make-start
 @mixin make-start($start) {
   grid-column-start: $start;
+}
+
+// make-row-span mixin
+@mixin make-row-span($rows) {
+  grid-row: span $rows / span $rows;
+}
+
+// make-row-start
+@mixin make-row-start($start) {
+  grid-row-start: $start;
 }
 
 // screen reader only

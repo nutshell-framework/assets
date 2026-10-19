@@ -11,7 +11,8 @@
 // --------------------------------------------------
 
 // general row-class
-.row {
+.row,
+.content-grid {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
   column-gap: var(--grid-gutter);
@@ -50,6 +51,7 @@
   }
 
   // [2][3]
+  .row-#{$i},
   .row-span-#{$i} {
     grid-row: span $i / span $i;
   }
@@ -87,6 +89,7 @@
     // [3][4]
     @for $i from 1 through $grid-columns {
       // [2][3]
+      .row-#{$current}-#{$i},
       .row-span-#{$current}-#{$i} {
         grid-row: span $i / span $i;
       }
